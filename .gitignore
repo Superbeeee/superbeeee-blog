@@ -1,0 +1,17 @@
+# Hexo
+public/
+.deploy_git/
+db.json
+*.log
+
+# Dependencies
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+.claude/

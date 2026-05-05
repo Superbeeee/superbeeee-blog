@@ -1,0 +1,86 @@
+# NexT 主題設定 - superbeeee.dev
+
+scheme: Muse
+
+darkmode: true
+
+menu:
+  首頁: / || fa fa-home
+  技術: /categories/技術/ || fa fa-code
+  跑步: /running/ || fa fa-running
+  跑鞋: /categories/跑鞋/ || fa fa-shoe-prints
+  導覽: /navigation/ || fa fa-list
+  關於我: /about/ || fa fa-user
+
+sidebar:
+  position: right
+  display: post
+  padding: 18
+  offset: 12
+
+avatar:
+  url: /images/avatar.png
+  rounded: true
+  opacity: 1
+  rotated: false
+
+social:
+  GitHub: https://github.com/superbeeee || fab fa-github
+  LinkedIn: https://linkedin.com/in/easontang || fab fa-linkedin
+  Instagram: https://instagram.com/superbeeee || fab fa-instagram
+  RSS: /atom.xml || fa fa-rss
+
+social_icons:
+  enable: true
+  icons_only: false
+  transition: false
+
+toc:
+  enable: true
+  number: true
+  wrap: false
+  expand_all: false
+  max_depth: 3
+
+codeblock:
+  theme:
+    light: atom-one-light
+    dark: atom-one-dark
+  copy_button:
+    enable: true
+    style: default
+
+back2top:
+  enable: true
+  sidebar: false
+  scrollpercent: true
+
+reading_progress:
+  enable: true
+  position: top
+  color: "#37c6c0"
+  height: 2px
+
+footer:
+  since: 2026
+  icon:
+    name: fa fa-heart
+    animated: false
+    color: "#ff0000"
+  copyright: Eason Tang
+  powered: false
+
+creative_commons:
+  license: by-nc-sa
+  language: deed.zh-tw
+  post: true
+
+local_search:
+  enable: true
+  trigger: auto
+  top_n_per_article: 1
+  unescape: false
+  preload: false
+
+seo: true
+index_with_subtitle: true

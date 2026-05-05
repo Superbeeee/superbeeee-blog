@@ -1,0 +1,176 @@
+.marathon-stats {
+  background: #222;
+  color: #eaeaea;
+  padding: 32px 24px;
+  margin: 0 0 32px;
+  border-radius: 8px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.marathon-stats__title {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0 0 8px;
+  color: #eaeaea;
+  border: none;
+}
+
+.marathon-stats__subtitle {
+  font-size: 14px;
+  color: #9a9a9a;
+  margin: 0 0 16px;
+  line-height: 1.6;
+}
+
+.marathon-stats__pb-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border: 1px solid #c9a46a;
+  border-radius: 4px;
+  background: #2e2820;
+  color: #d4af37;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+.marathon-stats__pb-badge svg {
+  flex-shrink: 0;
+  fill: #d4af37;
+}
+
+.marathon-stats__hint {
+  display: none;
+  text-align: right;
+  font-size: 11px;
+  color: #666;
+  margin: 24px 0 6px;
+}
+
+.marathon-stats__chart-wrap {
+  position: relative;
+  background: #1b1b1b;
+  border-radius: 8px;
+  padding-left: 50px;
+  margin-top: 24px;
+  overflow: hidden;
+}
+
+.marathon-stats__y-axis {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50px;
+  height: 100%;
+  z-index: 2;
+  background: #1b1b1b;
+  pointer-events: none;
+}
+
+.marathon-stats__y-label {
+  position: absolute;
+  left: 12px;
+  font-size: 11px;
+  color: #666;
+  transform: translateY(-50%);
+  white-space: nowrap;
+}
+
+.marathon-stats__scroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: #3a3a3a #1b1b1b;
+}
+
+.marathon-stats__scroll::-webkit-scrollbar {
+  height: 6px;
+}
+
+.marathon-stats__scroll::-webkit-scrollbar-track {
+  background: #1b1b1b;
+}
+
+.marathon-stats__scroll::-webkit-scrollbar-thumb {
+  background: #3a3a3a;
+  border-radius: 3px;
+}
+
+.marathon-stats__svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.ms-grid {
+  stroke: #2d2d2d;
+  stroke-width: 1;
+  stroke-dasharray: 3 4;
+  fill: none;
+}
+
+.ms-grid--solid {
+  stroke: #3a3a3a;
+  stroke-dasharray: none;
+}
+
+.ms-line {
+  fill: none;
+  stroke: #5a8fb8;
+  stroke-width: 2;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.ms-dot {
+  fill: #5a8fb8;
+  stroke: #1b1b1b;
+  stroke-width: 2;
+}
+
+.ms-star {
+  fill: #d4af37;
+}
+
+.ms-time {
+  font-size: 11px;
+  fill: #9a9a9a;
+}
+
+.ms-time--pb {
+  font-size: 12px;
+  font-weight: 600;
+  fill: #d4af37;
+}
+
+.ms-xlabel {
+  font-size: 11px;
+  fill: #888;
+}
+
+.ms-xlabel--year {
+  font-size: 10px;
+}
+
+.ms-xlabel--pb {
+  fill: #d4af37;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .marathon-stats {
+    padding: 24px 16px;
+  }
+  .marathon-stats__title {
+    font-size: 20px;
+  }
+  .marathon-stats__subtitle {
+    font-size: 12px;
+  }
+  .marathon-stats__hint {
+    display: block;
+  }
+}
