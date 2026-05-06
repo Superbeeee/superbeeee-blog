@@ -8,7 +8,7 @@ language: zh-TW
 timezone: Asia/Taipei
 
 # URL
-url: https://superbeeee.dev
+url: https://superbeeee.com
 permalink: post/:year/:month/:title/
 permalink_defaults:
 pretty_urls:
@@ -21,6 +21,9 @@ default_layout: post
 external_link:
   enable: true
 post_asset_folder: true
+marked:
+  prependRoot: true
+  postAsset: true
 syntax_highlighter: highlight.js
 highlight:
   line_number: true
@@ -47,12 +50,6 @@ pagination_dir: page
 
 # Theme
 theme: next
-
-# Deployment
-deploy:
-  type: git
-  repo: https://github.com/superbeeee/superbeeee.github.io
-  branch: main
 
 # Search
 search:
