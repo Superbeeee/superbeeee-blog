@@ -3,25 +3,33 @@ title: 關於我
 date: 2026-01-01
 ---
 
-## 嗨，我是 Eason Tang（唐偉耘）
+## 歡迎來到 Superbeeee
 
-台北人，目前擔任前端工程師，同時積極向 Customer Success Manager（CSM）方向轉型。ID `@superbeeee`。
+Superbeeee 的靈感來自遊戲公司 Supercell——那種「小單位、大能量」的精神。
+Super 代表超越與放大；Bee／Be 則同時承載三層意義：
+它是蜜蜂，每一隻都有自己獨特的角色與位置，微小卻不可或缺；
+它是動詞「成為」，你可以成為任何樣子，去做任何有意義的事；
+它也是最根本的存在狀態——I am，你的身份與你此刻的樣子，本身就有價值。
+eeee 的延伸，像是那個存在感在時間裡持續振動、擴散。
+Superbeeee 想說的是：你不只是在「做」什麼，你本身的存在、狀態與身份，就已經是一種力量。
+
+---
+
+## 嗨，我是 Eason
+
+台東人，目前擔任前端工程師，在AI時代下積極看向不同可能。ID `@superbeeee`。
 
 ---
 
 ## [¶](#工作經歷) 工作經歷
 
-- **Cayin Technology**（凱因科技）— 前端工程師，負責 goCayin IoT 數位看板平台（Vue.js + Laravel）
+- **Cayin Technology**（鎧應科技）— 前端工程師，負責 goCayin IoT 數位看板平台（Vue.js）
 - **Alpha Robo-Advisor** — 前端工程師，FinTech Robo-Advisor 產品
 - **PricewaterhouseCoopers Taiwan**（資誠）— 審計員
 
 ## [¶](#技術能力) 技術能力
 
-`Vue.js` `Laravel` `JavaScript` `GitLab CI/CD` `REST API` `Docker`
-
-## [¶](#為什麼轉-CSM) 為什麼轉 CSM？
-
-做了幾年前端，我發現自己對「怎麼讓用戶真正用好一個產品」比「怎麼把功能做出來」更有熱情。技術底讓我能快速理解 SaaS 產品的整合邏輯，審計背景讓我習慣用數據說話——這兩點剛好是 CSM 需要的核心能力。
+`Vue.js` `Tailwind` `JavaScript` `GitLab CI/CD` `RESTFUL API` `Docker`
 
 ---
 
@@ -31,15 +39,14 @@ date: 2026-01-01
 
 - 完賽紀錄：東京馬拉松
 - 週跑量：60–80 公里
-- 指定裝備：On Running 系列
 
 ---
 
 ## [¶](#聯絡) 聯絡我
 
 - **GitHub**：[@superbeeee](https://github.com/superbeeee)
-- **LinkedIn**：[Eason Tang](https://linkedin.com/in/easontang)
-- **Instagram**：[@superbeeee](https://instagram.com/superbeeee)
-- **Email**：your@email.com
+- **LinkedIn**：[Eason Tang](https://www.linkedin.com/in/tang0103/)
+- **Instagram**：[@_te16](https://instagram.com/_te16)
+- **Email**：tang0103@icloud.com
 
 > 合作邀約、諮詢請直接 Email 洽談
