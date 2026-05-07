@@ -23,12 +23,12 @@ comments: false
 
   <script type="application/json" id="marathon-data">
 [
-  { "name": "渣打台北", "year": "2022", "time": "4:15:32", "minutes": 255.53, "isMajor": false },
-  { "name": "名古屋",   "year": "2023", "time": "3:45:18", "minutes": 225.30, "isMajor": false },
-  { "name": "台北馬",   "year": "2023", "time": "3:32:05", "minutes": 212.08, "isMajor": false },
-  { "name": "大阪馬",   "year": "2024", "time": "3:22:48", "minutes": 202.80, "isMajor": false },
-  { "name": "柏林馬",   "year": "2025", "time": "3:12:15", "minutes": 192.25, "isMajor": true },
-  { "name": "東京馬",   "year": "2026", "time": "3:08:51", "minutes": 188.85, "isMajor": true, "isPB": true }
+  { "name": "福岡馬", "year": "2024", "time": "3:38:11", "minutes": 218.18, "isMajor": false },
+  { "name": "台北馬",   "year": "2024", "time": "3:28:37", "minutes": 208.62, "isMajor": false },
+  { "name": "國道馬",   "year": "2025", "time": "3:34:35", "minutes": 214.58, "isMajor": false },
+  { "name": "台北馬",   "year": "2025", "time": "3:30:40", "minutes": 210.67, "isMajor": false },
+  { "name": "東京馬",   "year": "2026", "time": "3:22:01", "minutes": 202.02, "isMajor": true, "isPB": true },
+  { "name": "CT226",   "year": "2026", "time": "3:56:50", "minutes": 236.83, "isMajor": false }
 ]
   </script>
 </section>
