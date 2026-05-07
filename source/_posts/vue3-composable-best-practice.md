@@ -1,6 +1,8 @@
 ---
 title: Vue 3 Composable 最佳實踐：從元件抽離到可複用邏輯
 date: 2026-04-15 10:00:00
+lang: zh-TW
+translation_key: vue3-composable-best-practice
 categories:
   - 技術
 tags:

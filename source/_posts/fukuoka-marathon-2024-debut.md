@@ -1,6 +1,8 @@
 ---
 title: 人生初馬：開箱 2024 福岡馬｜體驗抽籤的海外馬
 date: 2024-11-15 20:00:00
+lang: zh-TW
+translation_key: fukuoka-marathon-2024-debut
 categories:
   - 跑步
 tags:

@@ -1,6 +1,8 @@
 ---
 title: 東京馬拉松賽場心得：sub 3:10 的配速策略與賽道分析
 date: 2026-03-05 08:00:00
+lang: zh-TW
+translation_key: tokyo-marathon-race-report
 categories:
   - 跑步
 tags:

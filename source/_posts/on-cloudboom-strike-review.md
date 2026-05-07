@@ -1,6 +1,8 @@
 ---
 title: On Cloudboom Strike 深度評測：400 公里後的真實感受
 date: 2026-02-20 09:00:00
+lang: zh-TW
+translation_key: on-cloudboom-strike-review
 categories:
   - 跑鞋
 tags:

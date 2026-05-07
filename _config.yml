@@ -4,7 +4,10 @@ subtitle: 前端工程師 × 馬拉松跑者
 description: 技術、跑步、跑鞋的個人分享
 keywords: 前端工程師, Vue.js, 馬拉松, 跑鞋, CSM, 轉職, On Running
 author: Eason Tang
-language: zh-TW
+language:
+  - zh-TW
+  - en
+  - ja
 timezone: Asia/Taipei
 
 # URL
@@ -14,6 +17,10 @@ permalink_defaults:
 pretty_urls:
   trailing_index: false
   trailing_html: false
+
+# i18n：自製 i18n stack（scripts/translation-posts.js / translations.js / i18n-generators.js）
+i18n_dir: :lang
+translation_post_dir: _posts_translation
 
 # Writing
 new_post_name: :title.md

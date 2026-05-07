@@ -1,0 +1,46 @@
+// 語言切換器 - tigercosmos 風格
+// 用 NeXT 的 CSS 變數，讓 light/dark mode 自動切換顏色
+// position: absolute 讓它釘在 document 右上而不是 viewport，滾下去就消失，不會擋 sidebar
+.lang-switcher
+  position: absolute
+  top: 18px
+  right: 24px
+  display: flex
+  align-items: center
+  gap: 8px
+  font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif
+  font-size: 13px
+  letter-spacing: 0.3px
+  padding: 6px 10px
+  background: var(--content-bg-color)
+  border: 1px solid var(--btn-default-border-color)
+  border-radius: 4px
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08)
+
+  .lang-current
+    color: var(--link-hover-color)
+    font-weight: 600
+    border-bottom: 1px solid var(--link-hover-color)
+    padding-bottom: 1px
+
+  .lang-link
+    color: var(--link-color)
+    text-decoration: none
+    transition: color 0.15s ease
+    border-bottom: none
+
+    &:hover
+      color: var(--link-hover-color)
+      border-bottom: none
+
+  .lang-sep
+    color: var(--btn-default-border-color)
+    user-select: none
+
+// 手機版縮小避免擋到 NeXT 漢堡選單（在左側）
+@media (max-width: 767px)
+  .lang-switcher
+    top: 12px
+    right: 12px
+    font-size: 12px
+    padding: 4px 8px

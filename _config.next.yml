@@ -84,3 +84,12 @@ local_search:
 
 seo: true
 index_with_subtitle: true
+
+# 多語言：關掉 NeXT 內建的 select 切換器，改用自製極簡版
+language_switcher: false
+
+# 自訂檔案：把切換器與樣式注入到 header / styles
+custom_file_path:
+  header: source/_data/header.njk
+  style: source/_data/styles.styl
+
