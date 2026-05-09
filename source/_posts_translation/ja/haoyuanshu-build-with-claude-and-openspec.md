@@ -3,7 +3,7 @@ title: "SDD 開発フロー実践：Claude のツール群で誦経記録アプ�
 date: 2026-05-08 14:30:00
 lang: ja
 translation_key: haoyuanshu-build-with-claude-and-openspec
-description: 二つの週末で iOS 誦経記録アプリ「好願書」を制作。Claude Design で発想、openspec で仕様化、Claude Code で実装。SDD（仕様駆動開発）と AI 協業の実践記録 ── 任せていい仕事と、任せてはいけない仕事。
+description: 二つの週末で iOS 誦経記録アプリ「好願書」を制作。Claude Design で発想、openspec で仕様化、Claude Code で実装。SDD（仕様駆動開発）ワークフローの記録 ── AI の出力のうち、そのまま使えるものと、人間の確認が必要なもの。
 categories:
   - 技術
 tags:
