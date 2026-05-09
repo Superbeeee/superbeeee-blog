@@ -1,0 +1,82 @@
+# Superbeeee blog · robots.txt
+# Stance: 歡迎搜尋引擎索引、歡迎 AI 即時引用（grounding / RAG / search），
+#         拒絕將內容用於 AI 模型訓練。
+#
+# Cloudflare-style Content Signals（給遵守此規範的爬蟲讀）：
+#   search    = yes  允許索引、出現在搜尋結果
+#   ai-input  = yes  允許用於即時 AI 回答（RAG、grounding、引用）
+#   ai-train  = no   不允許用於訓練 / fine-tune AI 模型
+#
+# 法律宣示：以 Content Signal 表達的限制，是依據歐盟著作權指令
+# (EU Directive 2019/790, Article 4) 對權利的明示保留。
+
+User-agent: *
+Content-Signal: search=yes, ai-input=yes, ai-train=no
+Allow: /
+
+# === AI 訓練爬蟲 — 一律 Disallow ===
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: Applebot-Extended
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: ImagesiftBot
+Disallow: /
+
+User-agent: Amazonbot
+Disallow: /
+
+User-agent: FacebookBot
+Disallow: /
+
+User-agent: Meta-ExternalAgent
+Disallow: /
+
+User-agent: cohere-ai
+Disallow: /
+
+User-agent: PetalBot
+Disallow: /
+
+User-agent: YouBot
+Disallow: /
+
+# === AI 即時引用 / 搜尋爬蟲 — 允許（會帶 attribution） ===
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+# === Sitemap ===
+Sitemap: https://superbeeee.com/sitemap.xml

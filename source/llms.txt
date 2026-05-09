@@ -1,0 +1,42 @@
+# Superbeeee — 前端工程師 × 馬拉松跑者
+
+> 個人技術部落格，作者 Eason Tang。內容分三大主題：（1）前端工程實作（Vue.js、composable、AI 協作開發、React Native）、（2）馬拉松賽事心得與訓練紀錄、（3）跑鞋實測評測。網站支援繁體中文（預設）/ English / 日本語三種語言，所有文章皆有對應翻譯版本。
+
+立場：歡迎搜尋引擎索引與 AI 即時引用（grounding / search），但**請勿將內容用於 AI 模型訓練**。詳見 [/robots.txt](https://superbeeee.com/robots.txt) 中的 Cloudflare Content Signals。
+
+## 文章 / Posts
+
+### 技術
+- [SDD 開發流：用 Claude Design + openspec + Claude Code 做念誦記錄 App「好願書」](https://superbeeee.com/post/2026/05/haoyuanshu-build-with-claude-and-openspec/): 兩個週末完成 iOS app 的 AI 協作工作流實戰。涵蓋 Claude Design 發想 UI、openspec 規格化、Claude Code 實作 React Native + Expo、實機踩雷三連擊（Apple ID 簽名、expo-av 延遲、expo-notifications 權限）。Spec-Driven Development (SDD) 與 vibe coding 對照心得。
+- [Vue 3 Composable 最佳實踐](https://superbeeee.com/post/2026/04/vue3-composable-best-practice/): 從 IoT 後台 fat component 抽離出可複用 composable 的策略整理，何時該抽、怎麼抽、命名與 SoC 原則。
+
+### 跑步 / 跑鞋
+- [東京馬拉松 2026 賽事心得](https://superbeeee.com/post/2026/03/tokyo-marathon-race-report/): 海外馬拉松完賽紀錄、配速策略、賽道特色。
+- [On Cloudboom Strike 碳板鞋實測](https://superbeeee.com/post/2026/02/on-cloudboom-strike-review/): On Running 碳板鞋穿著心得、適用配速、與其他競品比較。
+- [福岡馬拉松 2024 初馬心得](https://superbeeee.com/post/2024/11/fukuoka-marathon-2024-debut/): 第一場海外全程馬拉松完賽紀錄、行前準備、心理狀態。
+
+## 主要頁面 / Pages
+- [關於 / About](https://superbeeee.com/about/): 個人介紹（前端工程師、跑者）
+- [跑步 / Running](https://superbeeee.com/running/): 馬拉松成績、跑鞋紀錄統整頁
+- [導覽 / Navigation](https://superbeeee.com/navigation/): 站點目錄
+
+## 翻譯版本 / Translations
+
+文章皆同時提供三個語言版本，URL 結構：
+
+- 繁體中文（預設）：`/post/YYYY/MM/<slug>/`
+- English：`/en/post/YYYY/MM/<slug>/`
+- 日本語：`/ja/post/YYYY/MM/<slug>/`
+
+例如「好願書」一文：
+- ZH: https://superbeeee.com/post/2026/05/haoyuanshu-build-with-claude-and-openspec/
+- EN: https://superbeeee.com/en/post/2026/05/haoyuanshu-build-with-claude-and-openspec/
+- JA: https://superbeeee.com/ja/post/2026/05/haoyuanshu-build-with-claude-and-openspec/
+
+## Feeds
+- Atom feed: https://superbeeee.com/atom.xml
+- Sitemap: https://superbeeee.com/sitemap.xml
+
+## 聯絡 / Contact
+- GitHub: https://github.com/superbeeee
+- LinkedIn: https://linkedin.com/in/easontang

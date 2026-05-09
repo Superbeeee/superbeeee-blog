@@ -96,6 +96,7 @@ language_switcher: false
 
 # 自訂檔案：把切換器與樣式注入到 header / styles
 custom_file_path:
+  head: source/_partials/head.njk
   header: source/_partials/header.njk
   postBodyStart: source/_partials/post-body-start.njk
   style: source/_partials/styles.styl

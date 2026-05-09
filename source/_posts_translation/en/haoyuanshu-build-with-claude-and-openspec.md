@@ -3,6 +3,7 @@ title: "SDD in Practice: Building HaoYuanShu, a Buddhist Recitation App (iOS) wi
 date: 2026-05-08 14:30:00
 lang: en
 translation_key: haoyuanshu-build-with-claude-and-openspec
+description: Built HaoYuanShu — a Buddhist recitation iOS app — in two weekends with Claude Design, openspec, and Claude Code. Field notes on SDD with AI.
 categories:
   - 技術
 tags:

@@ -3,6 +3,7 @@ title: SDD 開發流：AI 工具製作 誦經紀錄 App-好願書（IOS）
 date: 2026-05-08 14:30:00
 lang: zh-TW
 translation_key: haoyuanshu-build-with-claude-and-openspec
+description: 用兩個週末，透過 Claude Design 發想 UI、openspec 規格化、Claude Code 實作，做出念誦記錄 iOS App「好願書」。SDD（規格驅動開發）工作流的真實踩雷紀錄，AI 協作下哪些事能丟、哪些不能丟。
 categories:
   - 技術
 tags:

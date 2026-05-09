@@ -1,0 +1,14 @@
+{# 注入到 <head>：對有翻譯版本的文章發 hreflang alternate links
+   讓 Google / Bing 知道三個語言版是同一篇文章的不同版本，
+   並依使用者語言環境提供對應版本（提升 i18n SEO）。 #}
+{%- if page.layout === 'post' %}
+  {%- set entries = translation_entries(page) %}
+  {%- if entries and entries.length > 1 %}
+    {%- for entry in entries %}
+<link rel="alternate" hreflang="{{ entry.lang }}" href="{{ entry.abs }}">
+    {%- endfor %}
+    {%- for entry in entries %}{%- if entry.isDefault %}
+<link rel="alternate" hreflang="x-default" href="{{ entry.abs }}">
+    {%- endif %}{%- endfor %}
+  {%- endif %}
+{%- endif %}
