@@ -1,5 +1,5 @@
 ---
-title: AI工具製作 誦經紀錄 App 好願書（IOS）
+title: SDD 開發流：AI 工具製作 誦經紀錄 App-好願書（IOS）
 date: 2026-05-08 14:30:00
 lang: zh-TW
 translation_key: haoyuanshu-build-with-claude-and-openspec
@@ -16,6 +16,8 @@ tags:
 
 還記得小時候奶奶都會拿著念珠在念經時轉動，並且用計數器記錄唸的次數，長大後因緣際會下自己有時也會念誦心經，因為回向的對象不同，或是目的不同，覺得可以做一款App來做這方面的紀錄嬰，因此有此篇文章的分享。
 不想跳進 React Native 的學習曲線，於是用了兩個週末，把腦袋裡那個「禪意配色 + 木魚音效 + 熱力圖」的想像，透過 Claude Design 發想、openspec 規格化、再交給 Claude Code 實作，最後跑在我的 iPhone 上。
+
+另一個動機，是想拿這個專案實際試一下 **SDD（Spec-Driven Development，規格驅動開發）** 這套流程 —— 先把要做什麼寫成 spec、再讓 AI 照 spec 實作 —— 看看是不是真的能比直接 vibe coding 更穩定、更可追蹤。好願書算是一個練習題。
 
 這篇紀錄整段流程，以及 AI 協作下的踩雷與取捨。
 
