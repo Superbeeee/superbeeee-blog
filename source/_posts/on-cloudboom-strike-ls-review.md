@@ -235,4 +235,4 @@ LS 的定位適合高速跑者，但也因為數量不多、價格偏高，算�
 
 ---
 
-> 本文為筆者於運動筆記發表之鞋評整理重貼。Instagram：[@_te16](https://www.instagram.com/_te16/)
+> Instagram：[@_te16](https://www.instagram.com/_te16/)

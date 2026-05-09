@@ -230,4 +230,4 @@ Takemura 先生有提到，Ray 不受限於步頻或步幅的跑者，但是碳�
 
 ---
 
-> 本文整理自筆者於運動筆記發表的鞋評：[【評測】RAY不可當 2025亞瑟士鞋皇 僅 129 公克｜ASICS METASPEED RAY](https://running.biji.co/index.php?q=review&act=detail&id=57634)。Instagram：[@_te16](https://www.instagram.com/_te16/)
+> Instagram：[@_te16](https://www.instagram.com/_te16/)

@@ -184,7 +184,23 @@
       console.error('marathon-chart: invalid data', err);
       return;
     }
+    markPb(data);
     render(container, data);
+    updatePbBadge(data);
+  }
+
+  function markPb(data) {
+    if (!data.length) return;
+    const best = data.reduce((acc, cur) => cur.minutes < acc.minutes ? cur : acc);
+    data.forEach(r => { r.isPB = (r === best); });
+  }
+
+  function updatePbBadge(data) {
+    const badgeEl = document.querySelector('[data-pb-badge]');
+    if (!badgeEl || !data.length) return;
+    const best = data.find(r => r.isPB);
+    if (!best) return;
+    badgeEl.textContent = 'PB ' + best.time + ' / ' + best.name + ' ' + best.year;
   }
 
   if (document.readyState === 'loading') {

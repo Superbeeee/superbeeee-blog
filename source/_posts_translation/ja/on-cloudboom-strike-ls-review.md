@@ -235,4 +235,4 @@ LS の第三カラーが出た時、筆者は単に鮮やかな配色だなと�
 
 ---
 
-> 本記事は筆者が「運動筆記（Sports Note）」に寄稿したシューズレビューを再掲したものです。Instagram：[@_te16](https://www.instagram.com/_te16/)
+> Instagram：[@_te16](https://www.instagram.com/_te16/)

@@ -174,3 +174,37 @@
     display: block;
   }
 }
+
+/* /running/ 頁面 body 是 .posts-expand，內層 .posts-collapse 想要時間軸樣式但
+   被 .posts-expand 規則蓋住（標題巨大、置中等）。下面用 3 class specificity
+   把那幾條反過來壓回，讓嵌入的 timeline 視覺上跟 /categories/X/ 一致。 */
+.posts-expand .posts-collapse .post-header {
+  font-size: 1rem !important;
+  margin-bottom: 0 !important;
+  text-align: left !important;
+}
+
+.posts-expand .posts-collapse .post-title {
+  font-size: 1rem !important;
+  font-weight: normal !important;
+  margin: 0 !important;
+}
+
+.posts-expand .posts-collapse .post-title-link {
+  display: inline !important;
+  position: static !important;
+}
+
+.posts-expand .posts-collapse .post-title-link::before {
+  display: none !important;
+}
+
+.posts-expand .posts-collapse .post-meta-container {
+  display: inline !important;
+  margin-top: 0 !important;
+  font-size: 0.75rem !important;
+}
+
+.posts-expand .posts-collapse .post-meta-container time {
+  border-bottom: 0 !important;
+}

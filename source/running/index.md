@@ -9,12 +9,12 @@ comments: false
 
 <section class="marathon-stats">
   <h2 class="marathon-stats__title">全馬成績紀錄</h2>
-  <p class="marathon-stats__subtitle">六場全馬，從 4 字頭到 sub 3:10 的進步軌跡</p>
+  <p class="marathon-stats__subtitle">全馬軌跡線圖</p>
   <div class="marathon-stats__pb-badge">
     <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true">
       <path d="M12 2l2.9 6.9L22 9.7l-5.3 4.6L18.3 22 12 18.3 5.7 22l1.6-7.7L2 9.7l7.1-.8z"/>
     </svg>
-    PB 3:08:51 / 東京馬拉松 2026
+    <span data-pb-badge>PB</span>
   </div>
 
   <div class="marathon-stats__hint">‹ 滑動看更早成績</div>
@@ -24,11 +24,11 @@ comments: false
   <script type="application/json" id="marathon-data">
 [
   { "name": "福岡馬", "year": "2024", "time": "3:38:11", "minutes": 218.18, "isMajor": false },
-  { "name": "台北馬",   "year": "2024", "time": "3:28:37", "minutes": 208.62, "isMajor": false },
-  { "name": "國道馬",   "year": "2025", "time": "3:34:35", "minutes": 214.58, "isMajor": false },
-  { "name": "台北馬",   "year": "2025", "time": "3:30:40", "minutes": 210.67, "isMajor": false },
-  { "name": "東京馬",   "year": "2026", "time": "3:22:01", "minutes": 202.02, "isMajor": true, "isPB": true },
-  { "name": "CT226",   "year": "2026", "time": "3:56:50", "minutes": 236.83, "isMajor": false }
+  { "name": "台北馬", "year": "2024", "time": "3:28:37", "minutes": 208.62, "isMajor": false },
+  { "name": "國道馬", "year": "2025", "time": "3:34:35", "minutes": 214.58, "isMajor": false },
+  { "name": "台北馬", "year": "2025", "time": "3:30:40", "minutes": 210.67, "isMajor": false },
+  { "name": "東京馬", "year": "2026", "time": "3:22:01", "minutes": 202.02, "isMajor": true },
+  { "name": "CT226",  "year": "2026", "time": "3:56:50", "minutes": 236.83, "isMajor": false }
 ]
   </script>
 </section>
@@ -38,8 +38,63 @@ comments: false
 
 ---
 
-## 跑步文章
+{% raw %}
+<div class="posts-collapse">
+  <div class="post-block">
+    <div class="post-content">
 
-- [東京馬拉松賽場心得：sub 3:10 的配速策略與賽道分析](/post/2026/03/tokyo-marathon-race-report/)
+      <div class="collection-title">
+        <h2 class="collection-header">跑步文章</h2>
+      </div>
 
-[看所有跑步文章 →](/categories/跑步/)
+      <div class="collection-year">
+        <span class="collection-header">2026</span>
+      </div>
+
+      <article itemscope itemtype="http://schema.org/Article">
+        <header class="post-header">
+          <div class="post-meta-container">
+            <time datetime="2026-03-05">03-05</time>
+          </div>
+          <div class="post-title">
+            <a class="post-title-link" href="/post/2026/03/tokyo-marathon-race-report/" itemprop="url">
+              <span itemprop="name">東京馬拉松賽場心得：sub 3:10 的配速策略與賽道分析</span>
+            </a>
+          </div>
+        </header>
+      </article>
+
+      <div class="collection-year">
+        <span class="collection-header">2024</span>
+      </div>
+
+      <article itemscope itemtype="http://schema.org/Article">
+        <header class="post-header">
+          <div class="post-meta-container">
+            <time datetime="2024-12-22">12-22</time>
+          </div>
+          <div class="post-title">
+            <a class="post-title-link" href="/post/2024/12/fukuoka-marathon-2024-debut/" itemprop="url">
+              <span itemprop="name">人生初馬｜開箱2024福岡馬｜體驗抽籤的海外馬</span>
+            </a>
+          </div>
+        </header>
+      </article>
+
+      <article itemscope itemtype="http://schema.org/Article">
+        <header class="post-header">
+          <div class="post-meta-container">
+            <time datetime="2024-11-02">11-02</time>
+          </div>
+          <div class="post-title">
+            <a class="post-title-link" href="/post/2024/11/on-evergreen-half-marathon-camp/" itemprop="url">
+              <span itemprop="name">破PB啦！充實的夏天｜瑞士 On 昂跑長榮馬拉松半馬初心訓練營</span>
+            </a>
+          </div>
+        </header>
+      </article>
+
+    </div>
+  </div>
+</div>
+{% endraw %}

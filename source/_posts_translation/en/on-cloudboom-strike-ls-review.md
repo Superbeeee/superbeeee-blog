@@ -233,4 +233,4 @@ And recently, with On's Korean flagship store opening, they brought out Twice's 
 
 ---
 
-> Adapted from the author's review originally published on Sports Note. Instagram: [@_te16](https://www.instagram.com/_te16/)
+> Instagram: [@_te16](https://www.instagram.com/_te16/)

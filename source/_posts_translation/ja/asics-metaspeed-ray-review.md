@@ -230,4 +230,4 @@ FF LEAP のソール素材と、専用設計のカーボンプレート配置に
 
 ---
 
-> 本記事は筆者が「運動筆記（Sports Note）」に寄稿したシューズレビューを再構成したものです：[【評測】RAY不可當 2025亞瑟士鞋皇 僅 129 公克｜ASICS METASPEED RAY](https://running.biji.co/index.php?q=review&act=detail&id=57634)。Instagram：[@_te16](https://www.instagram.com/_te16/)
+> Instagram：[@_te16](https://www.instagram.com/_te16/)
