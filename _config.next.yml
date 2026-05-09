@@ -4,6 +4,12 @@ scheme: Muse
 
 darkmode: true
 
+favicon:
+  small: /images/favicon-16x16.png
+  medium: /images/favicon-32x32.png
+  apple_touch_icon: /images/apple-touch-icon.png
+  safari_pinned_tab:
+
 menu:
   首頁: / || fa fa-home
   技術: /categories/技術/ || fa fa-code
@@ -90,6 +96,7 @@ language_switcher: false
 
 # 自訂檔案：把切換器與樣式注入到 header / styles
 custom_file_path:
-  header: source/_data/header.njk
-  style: source/_data/styles.styl
+  header: source/_partials/header.njk
+  postBodyStart: source/_partials/post-body-start.njk
+  style: source/_partials/styles.styl
 

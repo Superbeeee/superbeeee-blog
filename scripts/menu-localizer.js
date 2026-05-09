@@ -67,8 +67,12 @@ hexo.extend.filter.register('after_render:html', function (str, data) {
   // 改寫整份 HTML 中符合 LOCALIZABLE_PATTERNS 的連結（首頁、categories、tags、archives）
   // 文章內頁的 /post/.../ 不在 pattern 裡，且 EN/JA post 的 URL 已被 permalink filter 加好 /lang/
   // 所以這裡的改寫是安全的
-  return str.replace(/href="([^"]+)"/g, (match, href) => {
+  //
+  // 例外：跳過 <a lang="xxx"> 這種明確標示目標語言的連結（語言切換器用），
+  // 否則 ZH 連結會被改成 /<currentLang>/，導致切回中文時跑回原本語言的首頁。
+  return str.replace(/<a\b[^>]*\shref="([^"]+)"[^>]*>/g, (match, href) => {
     if (!shouldLocalize(href, langs)) return match;
-    return `href="${localize(href, pageLang)}"`;
+    if (/\slang="[^"]+"/.test(match)) return match;
+    return match.replace(`href="${href}"`, `href="${localize(href, pageLang)}"`);
   });
 });

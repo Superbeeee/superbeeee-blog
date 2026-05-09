@@ -1,0 +1,23 @@
+{# 文章頁面語言切換列：顯示於標題/meta 下方
+   - 三語對照：ZH / EN / JA
+   - 標示原文語言 + 翻譯由 AI 產生
+   - 當前語言用底線強調，其他語言為連結（無翻譯則導至該語首頁）
+   - original_lang 可透過 front-matter 覆寫，預設為站台預設語言 zh-TW #}
+{%- set entries = translation_entries_with_fallback(page) %}
+{%- if entries and entries.length > 1 %}
+  {%- set originalLang = page.original_lang or 'zh-TW' %}
+  {%- set originalLabel = 'ZH' if originalLang === 'zh-TW' else ('EN' if originalLang === 'en' else 'JA') %}
+  <div class="post-lang-info">
+    <span class="post-lang-label">Lang</span>
+    {%- for entry in entries %}
+      {%- set label = 'ZH' if entry.lang === 'zh-TW' else ('EN' if entry.lang === 'en' else 'JA') %}
+      {%- if entry.isCurrent %}
+        <span class="post-lang-current" lang="{{ entry.lang }}">{{ label }}</span>
+      {%- else %}
+        <a class="post-lang-link" href="{{ url_for(entry.path) }}" lang="{{ entry.lang }}"{% if entry.isFallback %} title="{{ entry.lang }} translation not yet available - opens homepage"{% endif %}>{{ label }}</a>
+      {%- endif %}
+      {%- if not loop.last %}<span class="post-lang-sep">,</span>{%- endif %}
+    {%- endfor %}
+    <span class="post-lang-note">(original {{ originalLabel }}, translation powered by AI)</span>
+  </div>
+{%- endif %}
