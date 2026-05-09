@@ -5,8 +5,8 @@ date: 2026-01-01
 
 ## 技術
 
+- [SDD 開發流：AI 工具製作 誦經紀錄 App-好願書（IOS）](/post/2026/05/haoyuanshu-build-with-claude-and-openspec/)
 - [Vue 3 Composable 最佳實踐](/post/2026/04/vue3-composable-best-practice/)
-- [前端工程師轉 CSM：為什麼技術背景是優勢](/post/2026/03/frontend-to-csm/)
 
 ## 跑步
 
@@ -14,4 +14,5 @@ date: 2026-01-01
 
 ## 跑鞋
 
-- [On Cloudboom Strike 深度評測：400 公里後的真實感受](/post/2026/02/on-cloudboom-strike-review/)
+- [【評測】昂跑 來自未來 大滿貫三冠鞋｜On Cloudboom Strike LS](/post/2025/12/on-cloudboom-strike-ls-review/)
+- [【評測】RAY不可當 2025亞瑟士鞋皇 僅 129 公克｜ASICS METASPEED RAY](/post/2025/08/asics-metaspeed-ray-review/)
