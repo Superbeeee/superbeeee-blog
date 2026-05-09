@@ -15,7 +15,7 @@ tags:
   - Expo
 ---
 
-I grew up watching my grandmother turn prayer beads while reciting sutras, using a small counter to track each chant. Years later I picked up the practice myself, and existing recitation apps either drowned the experience in flashy UI or forced the wrong mental model onto the act of chanting. Across two weekends I built my own — ideating screens with Claude Design, locking the spec down with openspec, shipping the React Native + Expo build with Claude Code, and finally running it on my own iPhone.
+I grew up watching my grandmother turn prayer beads while reciting sutras, using a small counter to track each chant. Years later I picked up the practice myself, and existing recitation apps either drowned the experience in flashy UI or forced the wrong mental model onto the act of chanting. Across two weekends I built my own — ideating screens with Claude Design, locking the spec down with openspec, shipping the React Native + Expo build with Claude Code, and finally running it on my iPhone.
 
 The other motivation was to put **SDD (Spec-Driven Development)** to a real test: write the spec first, then let AI implement strictly against it, and see whether it actually beats vibe coding on stability and traceability. HaoYuanShu was a self-assigned exercise.
 
@@ -245,7 +245,7 @@ openspec isn't a magical framework. Its real benefit is forcing you to **think t
 
 ## Closing
 
-Two weekends, one app running on my own iPhone. Three years ago this would have been unimaginable. Day to day I write Vue front-end. React Native I'd barely touched. Expo I'd never opened. Yet with Claude Design handling UI ideation, openspec pinning the spec down, and Claude Code wrangling the RN + TypeScript details, all I had to do was **hold the direction, read git diffs, and test on hardware**.
+Two weekends, one app running on my iPhone. Three years ago this would have been unimaginable. Day to day I write Vue front-end. React Native I'd barely touched. Expo I'd never opened. Yet with Claude Design handling UI ideation, openspec pinning the spec down, and Claude Code wrangling the RN + TypeScript details, all I had to do was **hold the direction, read git diffs, and test on hardware**.
 
 I won't say "AI replaced me writing code" — the wooden-fish counting trade-off, the signing fix, the 200ms latency optimization, none of those came from AI.
 
