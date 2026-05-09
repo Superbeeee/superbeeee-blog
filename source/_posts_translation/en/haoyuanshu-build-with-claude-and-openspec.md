@@ -59,7 +59,7 @@ My first prompt was:
 
 Claude Design produced 10 HTML mockups. The colors and typography were broadly on point. The visualization of the overall design language was surprisingly good — the combination of red seal stamp + black hairline rule + rice-paper texture background suggests Claude has done its homework on the genre.
 
-{% asset_img 01-onboarding.png Mode-selection screen %}
+![Mode-selection screen](/post/2026/05/haoyuanshu-build-with-claude-and-openspec/01-onboarding.png)
 
 Claude Design did have rough edges:
 
@@ -175,7 +175,7 @@ The most memorable case: tasks.md item #7 was "Onboarding writes the chosen mode
 
 After that, I made a personal rule: **`git diff` is the ground truth. AI saying "done" doesn't count.** Every task ends with me reading the diff. No diff review, no checkbox.
 
-{% asset_img 03-create-plan.png Create-plan screen %}
+![Create-plan screen](/post/2026/05/haoyuanshu-build-with-claude-and-openspec/03-create-plan.png)
 
 ### Design trade-offs under AI collaboration
 
@@ -189,7 +189,7 @@ Claude Code's first pass: tapping the wooden fish plays the sound **and auto-inc
 
 AI defaulted to adding a toolbar, font-size controls, a bottom tab bar — "for usability". But the entire point of immersive mode is *fewer interruptions*. I cut 80% of those elements, leaving only the wooden fish, the count, and pause. I baked this into design.md — "immersive mode hides everything except: wooden fish, count, pause" — and AI stopped re-adding things in subsequent sessions.
 
-{% asset_img 05-immersive.png Immersive recitation mode %}
+![Immersive recitation mode](/post/2026/05/haoyuanshu-build-with-claude-and-openspec/05-immersive.png)
 
 ## Stage 4: Three iPhone-on-device pitfalls
 
@@ -222,7 +222,7 @@ The first AI pass didn't cache (because it wasn't perceptible in the simulator).
 
 The shared pattern: **the simulator can't reproduce these bugs, and AI can't see the simulator either**. Hardware testing is the part AI can't help with.
 
-{% asset_img 06-complete.png Completion-ritual screen %}
+![Completion-ritual screen](/post/2026/05/haoyuanshu-build-with-claude-and-openspec/06-complete.png)
 
 ## Reflection: what AI can and can't be handed
 
@@ -240,7 +240,7 @@ The single most important takeaway: **spec beats prompt**. A clearly written pro
 
 openspec isn't a magical framework. Its real benefit is forcing you to **think the problem through before writing a line of code**. That part AI cannot do for you.
 
-{% asset_img 07-archive.png Merit archive %}
+![Merit archive](/post/2026/05/haoyuanshu-build-with-claude-and-openspec/07-archive.png)
 
 ## Closing
 

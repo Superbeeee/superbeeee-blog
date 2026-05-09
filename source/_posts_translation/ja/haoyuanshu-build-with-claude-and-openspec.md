@@ -59,7 +59,7 @@ tags:
 
 Claude Design が返してきたのは 10 個の HTML モックアップ。色とタイポグラフィはおおむね方向通り。デザイン言語の可視化は意外と上手で ── 赤い印章（Seal） + 黒い細罫（Hairline） + 和紙テクスチャ背景の組み合わせ ── このジャンルへの下準備があるように見えた。
 
-{% asset_img 01-onboarding.png モード選択画面 %}
+![モード選択画面](/post/2026/05/haoyuanshu-build-with-claude-and-openspec/01-onboarding.png)
 
 ただし Claude Design には粗もある：
 
@@ -174,7 +174,7 @@ export const useStore = create<AppState>((set, get) => ({
 
 その日以来、自分にひとつルールを課した： **git diff こそが ground truth。AI が「完了」と言っても完了じゃない** 。一つの task が終わるたびに必ず diff を読む。読んでいないならチェックしない。
 
-{% asset_img 03-create-plan.png 誓願計画作成画面 %}
+![誓願計画作成画面](/post/2026/05/haoyuanshu-build-with-claude-and-openspec/03-create-plan.png)
 
 ### AI と協業するうえでのデザイン判断
 
@@ -188,7 +188,7 @@ Claude Code の初版では、木魚をタップすると音が鳴り **同時�
 
 AI のデフォルトは toolbar、字級調整、bottom tab を追加することだった、「使いやすくするため」と。だが没入モードの目的は **干渉を減らす** ことだ。要素を 80% 削り、木魚・遍数・一時停止だけ残した。これを design.md に「没入モードは hide everything except: 木魚、遍数、一時停止」と書き付けたところ、以降 AI は勝手に画面を足さなくなった。
 
-{% asset_img 05-immersive.png 没入誦経モード %}
+![没入誦経モード](/post/2026/05/haoyuanshu-build-with-claude-and-openspec/05-immersive.png)
 
 ## Stage 4：iPhone 実機の地雷三連
 
@@ -221,7 +221,7 @@ AI の初版はキャッシュをしていなかった（simulator では差を�
 
 三つの問題に共通するのは **simulator では再現せず、AI には simulator が見えない** ということ。実機検証は AI には頼れない。
 
-{% asset_img 06-complete.png 円満回向画面 %}
+![円満回向画面](/post/2026/05/haoyuanshu-build-with-claude-and-openspec/06-complete.png)
 
 ## 振り返り：AI に丸投げできないものは何か
 
@@ -239,7 +239,7 @@ AI の初版はキャッシュをしていなかった（simulator では差を�
 
 openspec は魔法の framework ではない。その本当の価値は **着工前に問題を考え抜くことを強制する** 点にある ── これは AI には肩代わりできない。
 
-{% asset_img 07-archive.png 功徳封存ページ %}
+![功徳封存ページ](/post/2026/05/haoyuanshu-build-with-claude-and-openspec/07-archive.png)
 
 ## おわりに
 
