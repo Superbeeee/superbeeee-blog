@@ -91,6 +91,9 @@ local_search:
 seo: true
 index_with_subtitle: true
 
+# Google Search Console 驗證
+google_site_verification: a9ixjiPecVQPcrlsquODId4Imt5rxKUihGSByh3qFHk
+
 # 多語言：關掉 NeXT 內建的 select 切換器，改用自製極簡版
 language_switcher: false
 
