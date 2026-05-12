@@ -3,6 +3,7 @@ title: 記事ナビゲーション
 date: 2026-01-01
 lang: ja
 translation_key: page-navigation
+description: 記事ガイド：技術・ランニング・シューズのカテゴリ別インデックス。記事を探すハブページ。
 ---
 
 ## 技術

@@ -22,6 +22,13 @@ pretty_urls:
 i18n_dir: :lang
 translation_post_dir: _posts_translation
 
+# i18n：各語言首頁 / archive / tag / category 的 meta description fallback
+# 由 i18n-generators.js 注入到對應語言生成頁的 page.description
+i18n_descriptions:
+  zh-TW: 技術、跑步、跑鞋的個人分享
+  en: Frontend engineer and marathon runner from Taipei — notes on web development, running training, and running-shoe reviews.
+  ja: 台北のフロントエンドエンジニア兼マラソンランナーが綴る、Web 開発・ランニング・シューズレビューの個人ノート。
+
 # Writing
 new_post_name: :title.md
 default_layout: post

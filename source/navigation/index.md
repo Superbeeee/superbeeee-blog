@@ -3,6 +3,7 @@ title: 文章導覽
 date: 2026-01-01
 lang: zh-TW
 translation_key: page-navigation
+description: 文章導覽：技術、跑步、跑鞋分類索引，是找文章的入口頁。
 ---
 
 ## 技術

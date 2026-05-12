@@ -1,7 +1,7 @@
-{# 注入到 <head>：對有翻譯版本的文章發 hreflang alternate links
-   讓 Google / Bing 知道三個語言版是同一篇文章的不同版本，
-   並依使用者語言環境提供對應版本（提升 i18n SEO）。 #}
-{%- if page.layout === 'post' %}
+{# 注入到 <head>：對有翻譯版本的頁面發 hreflang alternate links
+   涵蓋 post 與帶 translation_key 的靜態頁（about/running/navigation 三語版），
+   讓 Google / Bing 知道三個語言版互為翻譯，依使用者語言提供對應版本。 #}
+{%- if page.translation_key %}
   {%- set entries = translation_entries(page) %}
   {%- if entries and entries.length > 1 %}
     {%- for entry in entries %}

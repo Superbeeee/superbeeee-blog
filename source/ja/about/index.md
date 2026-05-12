@@ -3,6 +3,7 @@ title: About
 date: 2026-01-01
 lang: ja
 translation_key: page-about
+description: Eason について — 台北のフロントエンドエンジニア兼マラソンランナー。本サイトと著者の紹介、連絡先。
 ---
 
 ## Superbeeee へようこそ

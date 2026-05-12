@@ -4,6 +4,7 @@ date: 2026-05-06
 comments: false
 lang: ja
 translation_key: page-running
+description: マラソン・ハーフマラソンとトレーニング記録。自己ベスト、レースレポートの時系列、練習メモ、ギアの使用感。
 ---
 
 {% raw %}

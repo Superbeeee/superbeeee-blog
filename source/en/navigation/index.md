@@ -3,6 +3,7 @@ title: Article Index
 date: 2026-01-01
 lang: en
 translation_key: page-navigation
+description: Article index by topic — frontend engineering, running, and running-shoe reviews. The hub page for browsing posts.
 ---
 
 ## Tech

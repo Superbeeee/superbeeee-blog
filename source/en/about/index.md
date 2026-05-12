@@ -3,6 +3,7 @@ title: About
 date: 2026-01-01
 lang: en
 translation_key: page-about
+description: About Eason — a Taipei-based frontend engineer and marathon runner. Site introduction, author bio, and contact info.
 ---
 
 ## Welcome to Superbeeee

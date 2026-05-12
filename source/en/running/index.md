@@ -4,6 +4,7 @@ date: 2026-05-06
 comments: false
 lang: en
 translation_key: page-running
+description: Marathon, half-marathon, and training log — personal bests, race reports timeline, training notes, and gear impressions.
 ---
 
 {% raw %}

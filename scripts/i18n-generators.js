@@ -51,6 +51,14 @@ function filterPostsByLang(posts, lang, defaultLang) {
 
 const fmtNum = (num) => (num < 10 ? `0${num}` : String(num));
 
+// 各語言對應的 meta description（fallback）。
+// 沒設定就回 undefined，OG helper 自然 fallback 到 config.description。
+function getLangDescription(config, lang) {
+  const map = config.i18n_descriptions;
+  if (!map || typeof map !== 'object') return undefined;
+  return map[lang];
+}
+
 hexo.extend.generator.register('index', function i18nIndexGenerator(locals) {
   const config = this.config;
   const defaultLang = getDefaultLang(config);
@@ -72,11 +80,12 @@ hexo.extend.generator.register('index', function i18nIndexGenerator(locals) {
     const langPosts = filterPostsByLang(allPosts, lang, defaultLang);
     if (!langPosts.length) continue;
 
+    const description = getLangDescription(config, lang);
     pages.push(...pagination(langBase, langPosts, {
       perPage,
       layout: ['index', 'archive'],
       format: `${paginationDir}/%d/`,
-      data: { __index: true, lang }
+      data: { __index: true, lang, description }
     }));
   }
 
@@ -98,6 +107,7 @@ hexo.extend.generator.register('category', function i18nCategoryGenerator(locals
 
   for (const lang of languages) {
     const langPrefix = lang === defaultLang ? '' : `${lang}/`;
+    const description = getLangDescription(config, lang);
     categories.forEach((category) => {
       if (!category.length) return;
 
@@ -109,7 +119,7 @@ hexo.extend.generator.register('category', function i18nCategoryGenerator(locals
         perPage,
         layout: ['category', 'archive', 'index'],
         format: `${paginationDir}/%d/`,
-        data: { category: category.name, lang }
+        data: { category: category.name, lang, description }
       }));
     });
   }
@@ -132,6 +142,7 @@ hexo.extend.generator.register('tag', function i18nTagGenerator(locals) {
 
   for (const lang of languages) {
     const langPrefix = lang === defaultLang ? '' : `${lang}/`;
+    const description = getLangDescription(config, lang);
     tags.forEach((tag) => {
       if (!tag.length) return;
 
@@ -143,7 +154,7 @@ hexo.extend.generator.register('tag', function i18nTagGenerator(locals) {
         perPage,
         layout: ['tag', 'archive', 'index'],
         format: `${paginationDir}/%d/`,
-        data: { tag: tag.name, lang }
+        data: { tag: tag.name, lang, description }
       }));
     });
   }
@@ -172,9 +183,10 @@ hexo.extend.generator.register('archive', function i18nArchiveGenerator(locals) 
 
     const langPrefix = lang === defaultLang ? '' : `${lang}/`;
     const archiveDir = `${langPrefix}${baseArchiveDir}`;
+    const description = getLangDescription(config, lang);
 
     function generate(path, posts, options) {
-      const data = Object.assign({ archive: true, lang }, options);
+      const data = Object.assign({ archive: true, lang, description }, options);
       pages.push(...pagination(path, posts, {
         perPage,
         layout: ['archive', 'index'],

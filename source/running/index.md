@@ -4,6 +4,7 @@ date: 2026-05-06
 comments: false
 lang: zh-TW
 translation_key: page-running
+description: 馬拉松、半馬與訓練紀錄。包含個人 PB、賽事心得 timeline、訓練筆記與裝備使用心得。
 ---
 
 {% raw %}

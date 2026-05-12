@@ -3,6 +3,7 @@ title: 關於我
 date: 2026-01-01
 lang: zh-TW
 translation_key: page-about
+description: 關於 Eason — 前端工程師、馬拉松跑者，住在台北。站點與作者簡介，以及聯絡方式。
 ---
 
 ## 歡迎來到 Superbeeee
