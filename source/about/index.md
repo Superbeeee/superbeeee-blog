@@ -1,6 +1,8 @@
 ---
 title: 關於我
 date: 2026-01-01
+lang: zh-TW
+translation_key: page-about
 ---
 
 ## 歡迎來到 Superbeeee

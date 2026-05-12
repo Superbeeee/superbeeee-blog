@@ -29,15 +29,25 @@ function getLanguages(config) {
 
 function getTranslationPosts(hexo, page) {
   if (!page || !page.translation_key) return [];
+  const defaultLang = getDefaultLang(hexo.config);
+  const matched = [];
   const posts = hexo.locals.get('posts');
-  if (!posts) return [];
-  return posts
-    .filter((post) => post.translation_key === page.translation_key)
-    .sort((a, b) => {
-      const langA = a.lang || getDefaultLang(hexo.config);
-      const langB = b.lang || getDefaultLang(hexo.config);
-      return langA.localeCompare(langB);
+  if (posts) {
+    posts.forEach((post) => {
+      if (post.translation_key === page.translation_key) matched.push(post);
     });
+  }
+  const pages = hexo.locals.get('pages');
+  if (pages) {
+    pages.forEach((p) => {
+      if (p.translation_key === page.translation_key) matched.push(p);
+    });
+  }
+  return matched.sort((a, b) => {
+    const langA = a.lang || defaultLang;
+    const langB = b.lang || defaultLang;
+    return langA.localeCompare(langB);
+  });
 }
 
 function getPostSlugPath(post, lang) {
@@ -95,8 +105,9 @@ hexo.extend.helper.register('translation_entries', function (page) {
 
   return entries.map((post) => {
     const lang = post.lang || defaultLang;
+    const isPost = post.layout === 'post';
     let path;
-    if (lang !== defaultLang && post.slug && post.date && post.date.format) {
+    if (isPost && lang !== defaultLang && post.slug && post.date && post.date.format) {
       const year = post.date.format('YYYY');
       const month = post.date.format('MM');
       const slugPath = getPostSlugPath(post, lang) || post.slug;

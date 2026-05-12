@@ -8,8 +8,9 @@
 //   /categories/<x>/   →  /<lang>/categories/<x>/
 //   /tags/<x>/         →  /<lang>/tags/<x>/
 //   /archives/...      →  /<lang>/archives/...
-// 其他路徑（/about/、/running/、/navigation/ 等靜態頁）不改寫，
-// 因為目前還沒有它們的多語言版本，改寫只會 404。
+//   /about/            →  /<lang>/about/
+//   /running/          →  /<lang>/running/
+//   /navigation/       →  /<lang>/navigation/
 
 function getDefaultLang(config) {
   const lang = config.language;
@@ -38,7 +39,10 @@ const LOCALIZABLE_PATTERNS = [
   /^\/$/,
   /^\/categories\//,
   /^\/tags\//,
-  /^\/archives(\/|$)/
+  /^\/archives(\/|$)/,
+  /^\/about(\/|$)/,
+  /^\/running(\/|$)/,
+  /^\/navigation(\/|$)/
 ];
 
 function shouldLocalize(href, langs) {

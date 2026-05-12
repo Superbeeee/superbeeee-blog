@@ -1,6 +1,8 @@
 ---
 title: 文章導覽
 date: 2026-01-01
+lang: zh-TW
+translation_key: page-navigation
 ---
 
 ## 技術

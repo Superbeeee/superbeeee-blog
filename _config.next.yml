@@ -25,15 +25,15 @@ sidebar:
   offset: 12
 
 avatar:
-  url: /images/avatar.png
+  url: /images/avatar.jpg
   rounded: true
   opacity: 1
   rotated: false
 
 social:
   GitHub: https://github.com/superbeeee || fab fa-github
-  LinkedIn: https://linkedin.com/in/easontang || fab fa-linkedin
-  Instagram: https://instagram.com/superbeeee || fab fa-instagram
+  LinkedIn: https://linkedin.com/in/tang0103 || fab fa-linkedin
+  Instagram: https://instagram.com/_te16 || fab fa-instagram
   RSS: /atom.xml || fa fa-rss
 
 social_icons:
