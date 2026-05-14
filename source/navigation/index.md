@@ -14,7 +14,6 @@ description: 文章導覽：技術、跑步、跑鞋分類索引，是找文章�
 ## 跑步
 
 - [【體驗】東京 On Run Club & 銀座旗艦店 試跑｜On Cloudmonster 3](/post/2026/03/on-run-club-tokyo-cloudmonster-3/)
-- [東京馬拉松賽場心得：sub 3:10 的配速策略](/post/2026/03/tokyo-marathon-race-report/)
 - [人生初馬｜開箱2024福岡馬｜體驗抽籤的海外馬](/post/2024/12/fukuoka-marathon-2024-debut/)
 - [破PB啦！充實的夏天｜瑞士 On 昂跑長榮馬拉松半馬初心訓練營](/post/2024/11/on-evergreen-half-marathon-camp/)
 

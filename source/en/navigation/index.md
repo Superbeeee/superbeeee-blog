@@ -14,7 +14,6 @@ description: Article index by topic — frontend engineering, running, and runni
 ## Running
 
 - [[Experience] Tokyo On Run Club & Ginza Flagship Trial Run | On Cloudmonster 3](/en/post/2026/03/on-run-club-tokyo-cloudmonster-3/)
-- [Tokyo Marathon Race Report: Pacing Strategy for Sub 3:10](/en/post/2026/03/tokyo-marathon-race-report/)
 - [My First Marathon | Unboxing Fukuoka 2024 | Going Through the Lottery for an Overseas Race](/en/post/2024/12/fukuoka-marathon-2024-debut/)
 - [PB Smashed! A Summer of Substance | Swiss On × EVA Air Half-Marathon Beginners Camp](/en/post/2024/11/on-evergreen-half-marathon-camp/)
 

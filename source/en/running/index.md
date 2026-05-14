@@ -67,19 +67,6 @@ description: Marathon, half-marathon, and training log — personal bests, race 
         </header>
       </article>
 
-      <article itemscope itemtype="http://schema.org/Article">
-        <header class="post-header">
-          <div class="post-meta-container">
-            <time datetime="2026-03-05">03-05</time>
-          </div>
-          <div class="post-title">
-            <a class="post-title-link" href="/en/post/2026/03/tokyo-marathon-race-report/" itemprop="url">
-              <span itemprop="name">Tokyo Marathon Race Report: Pacing Strategy and Course Analysis for Sub 3:10</span>
-            </a>
-          </div>
-        </header>
-      </article>
-
       <div class="collection-year">
         <span class="collection-header">2024</span>
       </div>

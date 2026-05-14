@@ -67,19 +67,6 @@ description: 馬拉松、半馬與訓練紀錄。包含個人 PB、賽事心得 
         </header>
       </article>
 
-      <article itemscope itemtype="http://schema.org/Article">
-        <header class="post-header">
-          <div class="post-meta-container">
-            <time datetime="2026-03-05">03-05</time>
-          </div>
-          <div class="post-title">
-            <a class="post-title-link" href="/post/2026/03/tokyo-marathon-race-report/" itemprop="url">
-              <span itemprop="name">東京馬拉松賽場心得：sub 3:10 的配速策略與賽道分析</span>
-            </a>
-          </div>
-        </header>
-      </article>
-
       <div class="collection-year">
         <span class="collection-header">2024</span>
       </div>

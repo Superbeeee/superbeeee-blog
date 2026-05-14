@@ -14,7 +14,6 @@ description: 記事ガイド：技術・ランニング・シューズのカテ�
 ## ランニング
 
 - [【体験】東京 On Run Club & 銀座旗艦店で試走｜On Cloudmonster 3](/ja/post/2026/03/on-run-club-tokyo-cloudmonster-3/)
-- [東京マラソン参戦記：sub 3:10 を狙うペース戦略](/ja/post/2026/03/tokyo-marathon-race-report/)
 - [人生初マラソン｜2024 福岡マラソン開封録｜抽選制の海外マラソンを体験する](/ja/post/2024/12/fukuoka-marathon-2024-debut/)
 - [PB 更新！充実の夏｜スイス On × エバー航空ハーフマラソン初心者キャンプ](/ja/post/2024/11/on-evergreen-half-marathon-camp/)
 

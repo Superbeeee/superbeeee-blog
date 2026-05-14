@@ -11,7 +11,6 @@
 - [Vue 3 Composable 最佳實踐](https://superbeeee.com/post/2026/04/vue3-composable-best-practice/): 從 IoT 後台 fat component 抽離出可複用 composable 的策略整理，何時該抽、怎麼抽、命名與 SoC 原則。
 
 ### 跑步 / 跑鞋
-- [東京馬拉松 2026 賽事心得](https://superbeeee.com/post/2026/03/tokyo-marathon-race-report/): 海外馬拉松完賽紀錄、配速策略、賽道特色。
 - [On Cloudboom Strike 碳板鞋實測](https://superbeeee.com/post/2026/02/on-cloudboom-strike-review/): On Running 碳板鞋穿著心得、適用配速、與其他競品比較。
 - [福岡馬拉松 2024 初馬心得](https://superbeeee.com/post/2024/11/fukuoka-marathon-2024-debut/): 第一場海外全程馬拉松完賽紀錄、行前準備、心理狀態。
 
