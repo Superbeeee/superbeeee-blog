@@ -7,6 +7,9 @@ db.json
 # Dependencies
 node_modules/
 
+# Cloudflare Workers dev cache
+.wrangler/
+
 # OS
 .DS_Store
 Thumbs.db
