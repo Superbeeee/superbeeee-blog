@@ -8,6 +8,7 @@ description: 記事ガイド：技術・ランニング・シューズのカテ�
 
 ## 技術
 
+- [AI Native PM：市場調査からエンジニアリング納品までの Agentic Workflow](/ja/post/2026/05/haoyuanshu-v2-pm-ai-workflow/)
 - [SDD 開発フロー実践：Claude のツール群で誦経記録アプリ「好願書」を作る（iOS）](/ja/post/2026/05/haoyuanshu-build-with-claude-and-openspec/)
 - [Vue 3 Composable ベストプラクティス：コンポーネント分離から再利用ロジックへ](/ja/post/2026/04/vue3-composable-best-practice/)
 

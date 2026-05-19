@@ -8,6 +8,7 @@ description: Article index by topic — frontend engineering, running, and runni
 
 ## Tech
 
+- [AI Native PM: An Agentic Workflow From Market Research to Engineering Delivery](/en/post/2026/05/haoyuanshu-v2-pm-ai-workflow/)
 - [SDD in Practice: Building HaoYuanShu, a Buddhist Recitation App (iOS) with Claude Design, openspec & Claude Code](/en/post/2026/05/haoyuanshu-build-with-claude-and-openspec/)
 - [Vue 3 Composable Best Practices: From Component Extraction to Reusable Logic](/en/post/2026/04/vue3-composable-best-practice/)
 

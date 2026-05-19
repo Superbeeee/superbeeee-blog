@@ -8,6 +8,7 @@ description: 文章導覽：技術、跑步、跑鞋分類索引，是找文章�
 
 ## 技術
 
+- [AI Native PM：從市場研究到工程交付的 Agentic Workflow](/post/2026/05/haoyuanshu-v2-pm-ai-workflow/)
 - [SDD 開發流：AI 工具製作 誦經紀錄 App-好願書（IOS）](/post/2026/05/haoyuanshu-build-with-claude-and-openspec/)
 - [Vue 3 Composable 最佳實踐](/post/2026/04/vue3-composable-best-practice/)
 
