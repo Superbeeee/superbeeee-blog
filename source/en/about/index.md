@@ -8,13 +8,12 @@ description: About Eason — a Taipei-based frontend engineer and marathon runne
 
 ## Welcome to Superbeeee
 
-The name *Superbeeee* takes its cue from the game studio Supercell — that "small unit, big energy" spirit.
-*Super* stands for going beyond, scaling up; *Bee / Be* carries three layered meanings:
+The name *Superbeeee* takes its cue from the game studio Supercell — "made up of many small cells, but capable of unleashing enormous energy."
+*Bee / Be* carries three layered meanings:
 it's a bee — every one of them small but irreplaceable, with a role of its own;
 it's the verb *to be* — you can become whatever you want, and do whatever holds meaning for you;
 and it's the most fundamental state of existence — *I am*: your identity, the way you are right now, already has value.
-The trailing *eeee* is an extension, like a presence that keeps vibrating and rippling out through time.
-What *Superbeeee* wants to say is this: you aren't just what you *do* — your existence, your state, your identity are themselves a kind of power.
+*Superbeeee* is this: you aren't just what you *do* — your existence, your state, your identity are themselves a kind of power.
 
 ---
 
