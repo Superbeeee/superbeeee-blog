@@ -121,9 +121,12 @@ npx hexo server
 git add source/_posts/english-slug*
 git commit -m "post: 你的標題"
 git push
+
+# 部署到 Cloudflare Worker
+npm run clean && npm run build && npx wrangler deploy
 ```
 
-Vercel 接好後 push 即自動 build & deploy。
+詳細部署流程見下方「部署」章節。
 
 ---
 
@@ -184,16 +187,27 @@ pkill -f hexo && npx hexo clean && npx hexo server
 
 ## 部署
 
-### Vercel（推薦）
+### Cloudflare Worker（目前正用）
 
-1. push repo 到 GitHub
-2. Vercel → New Project → Import repo
-3. **Build Command**：`npx hexo generate`
-4. **Output Directory**：`public`
-5. **Install Command**：`npm install`
-6. Settings → Domains 加自訂網域
+靜態站由 Worker（`src/worker.js`）serve `public/`，並支援 `Accept: text/markdown` 回傳同路徑 `.md` 原始內容（給 LLM 用）。設定在 `wrangler.jsonc`。
 
-之後每次 push 自動 build。
+```bash
+# 一次性：登入
+npx wrangler login
+
+# 每次更新內容
+npm run clean              # 清 Hexo 快取
+npm run build              # 產生 public/
+npx wrangler deploy        # 部署到 Cloudflare
+```
+
+常用維護指令：
+
+```bash
+npx wrangler whoami                  # 確認登入狀態
+npx wrangler deployments list        # 看過去部署
+npx wrangler rollback                # 回滾上一版
+```
 
 ### GitHub Pages（備用）
 
@@ -201,3 +215,42 @@ pkill -f hexo && npx hexo clean && npx hexo server
 npx hexo generate
 npx hexo deploy
 ```
+
+---
+
+## AI 流量追蹤
+
+Worker 會偵測 AI bot User-Agent（GPTBot、ClaudeBot、ChatGPT-User、PerplexityBot 等）與 AI 服務 referrer（chatgpt.com、perplexity.ai、claude.ai 等），命中時寫進 D1 database `ai_traffic` 的 `hits` table，永久保留。
+
+### 查詢工具
+
+`bin/ai-stats.sh` 包裝了常用查詢：
+
+```bash
+./bin/ai-stats.sh today        # 最近 24 小時的 AI 訪問
+./bin/ai-stats.sh 7d           # 過去 7 天 AI 來源排行
+./bin/ai-stats.sh 30d          # 過去 30 天 AI 來源排行
+./bin/ai-stats.sh top-posts    # 哪篇文章被 AI 抓最多
+./bin/ai-stats.sh referrals    # 真人從 AI 對話點連結進來（最有價值）
+./bin/ai-stats.sh total        # 總筆數 + 第一筆/最新時間
+./bin/ai-stats.sh live         # 即時 stream（wrangler tail）
+./bin/ai-stats.sh raw "<SQL>"  # 任意 SQL
+```
+
+### D1 直接操作
+
+```bash
+npx wrangler d1 list                                              # 列出所有 DB
+npx wrangler d1 execute ai_traffic --remote --command="..."        # 任意 SQL
+npx wrangler d1 execute ai_traffic --remote --file=src/schema.sql  # 重跑 schema（idempotent）
+```
+
+### 重點欄位說明
+
+`hits` table 的 `kind` 欄位有三種值，含義不同：
+
+- `training` — AI 訓練/索引爬蟲（GPTBot、ClaudeBot、CCBot 等），表示內容被抓去當訓練資料或索引
+- `realtime` — AI 即時抓取（ChatGPT-User、Claude-User、PerplexityBot 等），表示「有人正在 AI 對話中問問題，AI 即時抓你頁面要回答他」**← 高機率被引用**
+- `referral` — 從 AI 服務的 referer 進來，表示「有人從 AI 對話直接點連結來」**← 確定被引用**
+
+`realtime` 跟 `referral` 是最有價值的訊號，代表你的內容真的被 AI 秀給使用者看了。
