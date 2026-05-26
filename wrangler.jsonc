@@ -13,5 +13,12 @@
   },
   "compatibility_flags": [
     "nodejs_compat"
+  ],
+  "d1_databases": [
+    {
+      "binding": "AI_TRAFFIC_DB",
+      "database_name": "ai_traffic",
+      "database_id": "b5fe9fec-3351-42bd-aed1-2ca7b942edae"
+    }
   ]
 }
