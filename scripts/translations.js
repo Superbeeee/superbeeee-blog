@@ -66,7 +66,7 @@ function getPostSlugPath(post, lang) {
 }
 
 function getListTranslationEntries(ctx, page) {
-  if (!page || !(page.__index || page.archive || page.tag)) return [];
+  if (!page || !(page.__index || page.archive || page.tag || page.category)) return [];
 
   const defaultLang = getDefaultLang(ctx.config);
   const languages = getLanguages(ctx.config);
