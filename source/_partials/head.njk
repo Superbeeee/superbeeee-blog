@@ -1,16 +1,16 @@
-{# 注入到 <head>：對有翻譯版本的頁面發 hreflang alternate links
-   涵蓋 post 與帶 translation_key 的靜態頁（about/running/navigation 三語版），
-   讓 Google / Bing 知道三個語言版互為翻譯，依使用者語言提供對應版本。 #}
-{%- if page.translation_key %}
-  {%- set entries = translation_entries(page) %}
-  {%- if entries and entries.length > 1 %}
-    {%- for entry in entries %}
+{# 注入到 <head>：對有多語版本的頁面發 hreflang alternate links
+   涵蓋 post、帶 translation_key 的靜態頁（about/running/navigation 三語版），
+   以及首頁 / archives / tags / categories 等列表頁
+   （translation_entries 對列表頁只回傳該語言真的有產生頁面的版本），
+   讓 Google / Bing 知道各語言版互為翻譯，依使用者語言提供對應版本。 #}
+{%- set entries = translation_entries(page) %}
+{%- if entries and entries.length > 1 %}
+  {%- for entry in entries %}
 <link rel="alternate" hreflang="{{ entry.lang }}" href="{{ entry.abs }}">
-    {%- endfor %}
-    {%- for entry in entries %}{%- if entry.isDefault %}
+  {%- endfor %}
+  {%- for entry in entries %}{%- if entry.isDefault %}
 <link rel="alternate" hreflang="x-default" href="{{ entry.abs }}">
-    {%- endif %}{%- endfor %}
-  {%- endif %}
+  {%- endif %}{%- endfor %}
 {%- endif %}
 
 <!-- Cloudflare Web Analytics -->

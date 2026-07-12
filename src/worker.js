@@ -5,6 +5,27 @@
 
 const POST_PATH_PATTERN = /\/post\//;
 
+// 只有文章「頁面」才做 markdown 協商與 Vary 標記。
+// 文章資料夾下的圖片等資產（/post/.../photo.png）路徑也含 /post/，
+// 但結尾不是 / 或 /index.html，不該被加 Vary 或嘗試抓 .md。
+function isPostPage(pathname) {
+  if (!POST_PATH_PATTERN.test(pathname)) return false;
+  return pathname.endsWith('/') || pathname.endsWith('/index.html');
+}
+
+// 在既有 Vary 上補 Accept（已有就不重複），避免 set/append 混用
+// 產生 "Vary: Accept, Accept" 或蓋掉上游的 Vary 值
+function addVaryAccept(headers) {
+  const existing = headers.get('Vary');
+  if (!existing) {
+    headers.set('Vary', 'Accept');
+    return;
+  }
+  const values = existing.split(',').map((v) => v.trim().toLowerCase());
+  if (values.includes('*') || values.includes('accept')) return;
+  headers.set('Vary', `${existing}, Accept`);
+}
+
 // AI 流量偵測名單
 const AI_USER_AGENTS = [
   // 訓練 / 索引爬蟲
@@ -107,7 +128,7 @@ export default {
 
     const acceptMarkdown =
       wantsMarkdown(request.headers.get('accept')) &&
-      POST_PATH_PATTERN.test(url.pathname);
+      isPostPage(url.pathname);
 
     if (acceptMarkdown) {
       const mdUrl = buildMarkdownUrl(url);
@@ -121,7 +142,7 @@ export default {
       if (mdResponse.ok) {
         const headers = new Headers(mdResponse.headers);
         headers.set('Content-Type', 'text/markdown; charset=utf-8');
-        headers.set('Vary', 'Accept');
+        addVaryAccept(headers);
         headers.set('X-Content-Negotiated', 'markdown');
         return new Response(mdResponse.body, {
           status: 200,
@@ -133,10 +154,10 @@ export default {
 
     const response = await env.ASSETS.fetch(request);
 
-    // 對 /post/ 路徑統一加 Vary: Accept，避免 cache 把 HTML/MD 版本搞混
-    if (POST_PATH_PATTERN.test(url.pathname)) {
+    // 對文章頁統一加 Vary: Accept，避免 cache 把 HTML/MD 版本搞混
+    if (isPostPage(url.pathname)) {
       const headers = new Headers(response.headers);
-      headers.append('Vary', 'Accept');
+      addVaryAccept(headers);
       return new Response(response.body, {
         status: response.status,
         statusText: response.statusText,

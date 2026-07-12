@@ -12,28 +12,7 @@
 //   /running/          →  /<lang>/running/
 //   /navigation/       →  /<lang>/navigation/
 
-function getDefaultLang(config) {
-  const lang = config.language;
-  if (Array.isArray(lang)) return lang[0];
-  if (typeof lang === 'string') return lang.split(',')[0].trim();
-  return 'en';
-}
-
-function getLanguages(config) {
-  const lang = config.language;
-  const raw = Array.isArray(lang)
-    ? lang
-    : (typeof lang === 'string' ? lang.split(',') : []);
-  const seen = new Set();
-  const result = [];
-  raw.forEach((item) => {
-    const normalized = String(item || '').trim();
-    if (!normalized || normalized === 'default' || seen.has(normalized)) return;
-    seen.add(normalized);
-    result.push(normalized);
-  });
-  return result;
-}
+const { getDefaultLang, getLanguages } = require('./lib/i18n-lang');
 
 const LOCALIZABLE_PATTERNS = [
   /^\/$/,
@@ -60,6 +39,22 @@ function localize(href, lang) {
   return `/${lang}${href}`;
 }
 
+// 查 hexo route 確認改寫後的目標頁真的有被產生。
+// i18n generator 對「該語言零篇文章」的 category/tag 不會產生頁面，
+// 這種情況保留原本的中文版連結，總比改寫成 404 好。
+// HTML 裡的 href 是 percent-encoded，route 名稱是未編碼字串，查之前先 decode。
+function localizedRouteExists(href) {
+  // 根路徑「/」去掉斜線後是空字串，對應的 route 是 index.html
+  const clean = String(href || '').replace(/^\/+/, '') || 'index.html';
+  let decoded = clean;
+  try {
+    decoded = decodeURI(clean);
+  } catch (err) {
+    // 解碼失敗就用原字串查
+  }
+  return Boolean(hexo.route.get(decoded));
+}
+
 hexo.extend.filter.register('after_render:html', function (str, data) {
   const config = hexo.config;
   const defaultLang = getDefaultLang(config);
@@ -77,6 +72,8 @@ hexo.extend.filter.register('after_render:html', function (str, data) {
   return str.replace(/<a\b[^>]*\shref="([^"]+)"[^>]*>/g, (match, href) => {
     if (!shouldLocalize(href, langs)) return match;
     if (/\slang="[^"]+"/.test(match)) return match;
-    return match.replace(`href="${href}"`, `href="${localize(href, pageLang)}"`);
+    const localized = localize(href, pageLang);
+    if (!localizedRouteExists(localized)) return match;
+    return match.replace(`href="${href}"`, `href="${localized}"`);
   });
 });

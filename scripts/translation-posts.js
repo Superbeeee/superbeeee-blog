@@ -26,9 +26,7 @@ function getPostDir(config) {
   return dir.endsWith('/') ? dir : `${dir}/`;
 }
 
-function normalizeLang(lang) {
-  return lang === 'jp' ? 'ja' : lang;
-}
+const { normalizeLang } = require('./lib/i18n-lang');
 
 let permalink;
 

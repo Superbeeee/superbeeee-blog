@@ -5,32 +5,7 @@
 // 為每個語言獨立生成首頁、標籤頁與歸檔頁。
 
 const pagination = require('hexo-pagination');
-
-function toLanguageArray(languageConfig) {
-  if (Array.isArray(languageConfig)) return languageConfig;
-  if (typeof languageConfig === 'string') {
-    return languageConfig.split(',').map((s) => s.trim()).filter(Boolean);
-  }
-  return [];
-}
-
-function getDefaultLang(config) {
-  const langs = toLanguageArray(config.language);
-  return langs[0] || 'en';
-}
-
-function getLanguages(config) {
-  const langs = toLanguageArray(config.language);
-  const seen = new Set();
-  const result = [];
-  for (const lang of langs) {
-    if (!lang || lang === 'default') continue;
-    if (seen.has(lang)) continue;
-    seen.add(lang);
-    result.push(lang);
-  }
-  return result.length ? result : [getDefaultLang(config)];
-}
+const { getDefaultLang, getLanguages } = require('./lib/i18n-lang');
 
 function normalizeDir(input) {
   if (!input) return '';
@@ -105,13 +80,21 @@ hexo.extend.generator.register('category', function i18nCategoryGenerator(locals
 
   const pages = [];
 
+  // 每個 category 只排序一次，不用每個語言重排一遍
+  const sortedPosts = new Map();
+  categories.forEach((category) => {
+    if (!category.length) return;
+    sortedPosts.set(category._id, category.posts.sort(orderBy));
+  });
+
   for (const lang of languages) {
     const langPrefix = lang === defaultLang ? '' : `${lang}/`;
     const description = getLangDescription(config, lang);
     categories.forEach((category) => {
-      if (!category.length) return;
+      const sorted = sortedPosts.get(category._id);
+      if (!sorted) return;
 
-      const posts = filterPostsByLang(category.posts.sort(orderBy), lang, defaultLang);
+      const posts = filterPostsByLang(sorted, lang, defaultLang);
       if (!posts.length) return;
 
       const path = `${langPrefix}${category.path}`;
@@ -140,13 +123,21 @@ hexo.extend.generator.register('tag', function i18nTagGenerator(locals) {
 
   const pages = [];
 
+  // 每個 tag 只排序一次，不用每個語言重排一遍
+  const sortedPosts = new Map();
+  tags.forEach((tag) => {
+    if (!tag.length) return;
+    sortedPosts.set(tag._id, tag.posts.sort(orderBy));
+  });
+
   for (const lang of languages) {
     const langPrefix = lang === defaultLang ? '' : `${lang}/`;
     const description = getLangDescription(config, lang);
     tags.forEach((tag) => {
-      if (!tag.length) return;
+      const sorted = sortedPosts.get(tag._id);
+      if (!sorted) return;
 
-      const posts = filterPostsByLang(tag.posts.sort(orderBy), lang, defaultLang);
+      const posts = filterPostsByLang(sorted, lang, defaultLang);
       if (!posts.length) return;
 
       const path = `${langPrefix}${tag.path}`;

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # AI 流量查詢工具
-# Usage: ./scripts/ai-stats.sh <subcommand>
+# Usage: ./bin/ai-stats.sh <subcommand>
 #
 # Subcommands:
 #   today        最近 24 小時的 AI 訪問
