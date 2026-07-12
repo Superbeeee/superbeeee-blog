@@ -4,6 +4,13 @@ scheme: Muse
 
 darkmode: true
 
+# 多語站必須關掉 fragment cache：
+# cache 開啟時 head / menu / search / footer 等 partial 只渲染一次就跨頁重用，
+# 內含的 __() 翻譯字串會凍結成「第一個渲染到的頁面」的語言，
+# 且併發渲染下誰先到是隨機的 → UI 字串語言每次 build 隨機亂跳
+cache:
+  enable: false
+
 favicon:
   small: /images/favicon-16x16.png
   medium: /images/favicon-32x32.png
