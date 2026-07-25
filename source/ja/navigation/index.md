@@ -8,6 +8,7 @@ description: 記事ガイド：技術・ランニング・シューズのカテ�
 
 ## 技術
 
+- [ブラウザに挨拶する：Google のオンデバイス・ニューラルネット MediaPipe で遊ぶ](/ja/post/2026/07/mediapipe-browser-presence-detection/)
 - [Vue から React へ：フレームワークを越える移行ノート](/ja/post/2026/06/vue-to-react-migration-notes/)
 - [AI Native PM：市場調査からエンジニアリング納品までの Agentic Workflow](/ja/post/2026/05/haoyuanshu-v2-pm-ai-workflow/)
 - [SDD 開発フロー実践：Claude のツール群で誦経記録アプリ「好願書」を作る（iOS）](/ja/post/2026/05/haoyuanshu-build-with-claude-and-openspec/)

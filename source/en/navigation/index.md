@@ -8,6 +8,7 @@ description: Article index by topic — frontend engineering, running, and runni
 
 ## Tech
 
+- [Saying Hi to the Browser: Playing with Google's On-Device Neural Nets — MediaPipe](/en/post/2026/07/mediapipe-browser-presence-detection/)
 - [From Vue to React: Notes on Crossing the Framework Divide](/en/post/2026/06/vue-to-react-migration-notes/)
 - [AI Native PM: An Agentic Workflow From Market Research to Engineering Delivery](/en/post/2026/05/haoyuanshu-v2-pm-ai-workflow/)
 - [SDD in Practice: Building HaoYuanShu, a Buddhist Recitation App (iOS) with Claude Design, openspec & Claude Code](/en/post/2026/05/haoyuanshu-build-with-claude-and-openspec/)
