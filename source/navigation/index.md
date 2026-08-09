@@ -22,6 +22,7 @@ description: 文章導覽：技術、跑步、跑鞋分類索引，是找文章�
 
 ## 跑鞋
 
+- [【評測】昂跑的成熟訓練鞋｜On Cloudmonster 3 Hyper](/post/2026/07/on-cloudmonster-3-hyper-review/)
 - [【評測】昂跑 來自未來 大滿貫三冠鞋｜On Cloudboom Strike LS](/post/2025/12/on-cloudboom-strike-ls-review/)
 - [【評測】RAY不可當 2025亞瑟士鞋皇 僅 129 公克｜ASICS METASPEED RAY](/post/2025/08/asics-metaspeed-ray-review/)
 - [【評測】昂跑 On Cloudboom 家族第一雙訓練鞋｜On Cloudboom Zone](/post/2025/03/on-cloudboom-zone-review/)

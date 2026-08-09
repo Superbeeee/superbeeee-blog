@@ -22,6 +22,7 @@ description: 記事ガイド：技術・ランニング・シューズのカテ�
 
 ## ランニングシューズ
 
+- [【レビュー】On の成熟したトレーニングシューズ｜On Cloudmonster 3 Hyper](/ja/post/2026/07/on-cloudmonster-3-hyper-review/)
 - [【レビュー】未来から来た大満貫トリプルクラウンシューズ｜On Cloudboom Strike LS](/ja/post/2025/12/on-cloudboom-strike-ls-review/)
 - [【レビュー】RAY は止められない 2025 年アシックスの王者シューズ、わずか 129g｜ASICS METASPEED RAY](/ja/post/2025/08/asics-metaspeed-ray-review/)
 - [【レビュー】On Cloudboom ファミリー初の練習用シューズ｜On Cloudboom Zone](/ja/post/2025/03/on-cloudboom-zone-review/)
