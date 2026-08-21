@@ -89,12 +89,24 @@
       time.textContent = p.time;
       svg.appendChild(time);
 
+      // 有軌跡資料的賽事才可點；marathon-3d.js 用 data-track 做事件委派
+      const nameCls = [p.isPB ? 'ms-xlabel ms-xlabel--pb' : 'ms-xlabel'];
+      if (p.track) nameCls.push('ms-xlabel--track');
       const name = el('text', {
         x: p.x,
         y: PLOT_BOTTOM + 22,
         'text-anchor': 'middle',
-        class: p.isPB ? 'ms-xlabel ms-xlabel--pb' : 'ms-xlabel'
+        class: nameCls.join(' ')
       });
+      if (p.track) {
+        name.setAttribute('data-track', p.track);
+        name.setAttribute('data-name', p.name);
+        name.setAttribute('data-year', p.year);
+        name.setAttribute('data-time', p.time);
+        name.setAttribute('role', 'button');
+        name.setAttribute('tabindex', '0');
+        name.setAttribute('aria-label', p.name + p.year + '：看 3D 心率軌跡');
+      }
       name.textContent = p.name;
       svg.appendChild(name);
 

@@ -9,10 +9,11 @@ description: 馬拉松、半馬與訓練紀錄。包含個人 PB、賽事心得 
 
 {% raw %}
 <link rel="stylesheet" href="/css/marathon-chart.css">
+<link rel="stylesheet" href="/css/marathon-3d.css">
 
 <section class="marathon-stats">
   <h2 class="marathon-stats__title">全馬成績紀錄</h2>
-  <p class="marathon-stats__subtitle">全馬軌跡線圖</p>
+  <p class="marathon-stats__subtitle">全馬軌跡線圖。<strong>金色底線</strong>的賽事可以點開 3D 心率軌跡。</p>
   <div class="marathon-stats__pb-badge">
     <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true">
       <path d="M12 2l2.9 6.9L22 9.7l-5.3 4.6L18.3 22 12 18.3 5.7 22l1.6-7.7L2 9.7l7.1-.8z"/>
@@ -30,13 +31,14 @@ description: 馬拉松、半馬與訓練紀錄。包含個人 PB、賽事心得 
   { "name": "台北馬", "year": "2024", "time": "3:28:37", "minutes": 208.62, "isMajor": false },
   { "name": "國道馬", "year": "2025", "time": "3:34:35", "minutes": 214.58, "isMajor": false },
   { "name": "台北馬", "year": "2025", "time": "3:30:40", "minutes": 210.67, "isMajor": false },
-  { "name": "東京馬", "year": "2026", "time": "3:22:01", "minutes": 202.02, "isMajor": true },
+  { "name": "東京馬", "year": "2026", "time": "3:22:01", "minutes": 202.02, "isMajor": true, "track": "/tracks/20260301-tokyo.json" },
   { "name": "CT226",  "year": "2026", "time": "3:56:50", "minutes": 236.83, "isMajor": false }
 ]
   </script>
 </section>
 
 <script src="/js/marathon-chart.js" defer></script>
+<script type="module" src="/js/marathon-3d.js"></script>
 {% endraw %}
 
 ---
