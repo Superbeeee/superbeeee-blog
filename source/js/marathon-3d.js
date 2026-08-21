@@ -350,14 +350,16 @@ function buildScene(mount, track, opts) {
   };
   renderer.domElement.addEventListener('pointermove', onPointerMove);
 
-  const onResize = () => {
+  // 用 ResizeObserver 而不是 window resize：進出全螢幕時視窗尺寸沒變、
+  // 變的是這個容器，監聽 window 會漏掉。
+  const ro = new ResizeObserver(() => {
     const nw = mount.clientWidth, nh = mount.clientHeight;
     if (!nw || !nh) return;
     camera.aspect = nw / nh;
     camera.updateProjectionMatrix();
     renderer.setSize(nw, nh);
-  };
-  window.addEventListener('resize', onResize);
+  });
+  ro.observe(mount);
 
   let raf = 0;
   const tick = () => {
@@ -373,7 +375,7 @@ function buildScene(mount, track, opts) {
     hrMin, hrMax,
     dispose() {
       cancelAnimationFrame(raf);
-      window.removeEventListener('resize', onResize);
+      ro.disconnect();
       renderer.domElement.removeEventListener('pointermove', onPointerMove);
       orbit.dispose();
       ribbonGeo.dispose(); ribbonMat.dispose();
@@ -401,34 +403,46 @@ async function loadTrack(url) {
   return cache.get(url);
 }
 
+const ICON_EXPAND =
+  '<svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true">'
+  + '<path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"'
+  + ' fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
+const ICON_COLLAPSE =
+  '<svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true">'
+  + '<path d="M9 4v5H4M15 4v5h5M9 20v-5H4M15 20v-5h5"'
+  + ' fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
+
 function buildOverlay(meta) {
   const root = document.createElement('div');
   root.className = 'route3d';
   root.innerHTML = [
-    '<div class="route3d__bar">',
-    '  <div class="route3d__id">',
-    '    <strong class="route3d__name"></strong>',
-    '    <span class="route3d__sub"></span>',
+    '<div class="route3d__panel" role="dialog" aria-modal="true" aria-label="3D 心率軌跡">',
+    '  <div class="route3d__bar">',
+    '    <div class="route3d__id">',
+    '      <strong class="route3d__name"></strong>',
+    '      <span class="route3d__sub"></span>',
+    '    </div>',
+    '    <div class="route3d__legend">',
+    '      <span class="route3d__legend-min"></span>',
+    '      <i class="route3d__ramp"></i>',
+    '      <span class="route3d__legend-max"></span>',
+    '      <span class="route3d__legend-label">bpm</span>',
+    '    </div>',
+    '    <button class="route3d__btn route3d__full" type="button" aria-label="全螢幕">' + ICON_EXPAND + '</button>',
+    '    <button class="route3d__btn route3d__close" type="button" aria-label="關閉">✕</button>',
     '  </div>',
-    '  <div class="route3d__legend">',
-    '    <span class="route3d__legend-min"></span>',
-    '    <i class="route3d__ramp"></i>',
-    '    <span class="route3d__legend-max"></span>',
-    '    <span class="route3d__legend-label">bpm</span>',
+    '  <div class="route3d__stage"><div class="route3d__mount"></div>',
+    '    <div class="route3d__status">載入軌跡中…</div>',
+    '    <dl class="route3d__readout" hidden>',
+    '      <div><dt>時間</dt><dd data-f="t">—</dd></div>',
+    '      <div><dt>距離</dt><dd data-f="dist">—</dd></div>',
+    '      <div><dt>心率</dt><dd data-f="hr">—</dd></div>',
+    '      <div><dt>配速</dt><dd data-f="pace">—</dd></div>',
+    '      <div><dt>高度</dt><dd data-f="ele">—</dd></div>',
+    '    </dl>',
     '  </div>',
-    '  <button class="route3d__close" type="button" aria-label="關閉">✕</button>',
+    '  <p class="route3d__hint">拖曳旋轉 · 滾輪／雙指縮放 · 滑過路線看該點數據</p>',
     '</div>',
-    '<div class="route3d__stage"><div class="route3d__mount"></div>',
-    '  <div class="route3d__status">載入軌跡中…</div>',
-    '  <dl class="route3d__readout" hidden>',
-    '    <div><dt>時間</dt><dd data-f="t">—</dd></div>',
-    '    <div><dt>距離</dt><dd data-f="dist">—</dd></div>',
-    '    <div><dt>心率</dt><dd data-f="hr">—</dd></div>',
-    '    <div><dt>配速</dt><dd data-f="pace">—</dd></div>',
-    '    <div><dt>高度</dt><dd data-f="ele">—</dd></div>',
-    '  </dl>',
-    '</div>',
-    '<p class="route3d__hint">拖曳旋轉 · 滾輪／雙指縮放 · 滑過路線看該點數據</p>',
   ].join('');
   root.querySelector('.route3d__name').textContent = meta.name + ' ' + meta.year;
   return root;
@@ -436,18 +450,42 @@ function buildOverlay(meta) {
 
 function close() {
   if (!active) return;
+  if (document.fullscreenElement) document.exitFullscreen().catch(() => {});
   active.scene?.dispose();
   active.root.remove();
   document.removeEventListener('keydown', active.onKey);
+  document.removeEventListener('fullscreenchange', active.onFsChange);
   document.body.style.overflow = active.prevOverflow;
   active = null;
+}
+
+/** 視窗 ⇄ 全螢幕。Safari 舊前綴不處理，沒有 API 就把按鈕收起來。 */
+function wireFullscreen(panel, btn) {
+  if (!panel.requestFullscreen) {
+    btn.remove();
+    return () => {};
+  }
+  const sync = () => {
+    const on = document.fullscreenElement === panel;
+    btn.innerHTML = on ? ICON_COLLAPSE : ICON_EXPAND;
+    btn.setAttribute('aria-label', on ? '離開全螢幕' : '全螢幕');
+  };
+  btn.addEventListener('click', () => {
+    if (document.fullscreenElement === panel) document.exitFullscreen().catch(() => {});
+    else panel.requestFullscreen().catch(() => {});
+  });
+  document.addEventListener('fullscreenchange', sync);
+  return sync;
 }
 
 async function open(meta) {
   close();
   const root = buildOverlay(meta);
-  const onKey = (e) => { if (e.key === 'Escape') close(); };
-  active = { root, onKey, scene: null, prevOverflow: document.body.style.overflow };
+  const panel = root.querySelector('.route3d__panel');
+  // 全螢幕時 Esc 交給瀏覽器退出全螢幕，別順手把整個視窗也關掉
+  const onKey = (e) => { if (e.key === 'Escape' && !document.fullscreenElement) close(); };
+  const onFsChange = wireFullscreen(panel, root.querySelector('.route3d__full'));
+  active = { root, onKey, onFsChange, scene: null, prevOverflow: document.body.style.overflow };
   document.body.appendChild(root);
   document.body.style.overflow = 'hidden';
   document.addEventListener('keydown', onKey);

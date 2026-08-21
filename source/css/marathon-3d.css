@@ -20,17 +20,40 @@
   text-decoration-style: solid;
 }
 
-/* 覆蓋層 */
+/* 遮罩：點空白處關閉 */
 .route3d {
   position: fixed;
   inset: 0;
   z-index: 9999;
   display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(8, 10, 13, 0.72);
+  backdrop-filter: blur(3px);
+}
+
+/* 視窗本體。全螢幕時由 :fullscreen 覆蓋成滿版 */
+.route3d__panel {
+  display: flex;
   flex-direction: column;
+  width: min(1120px, 100%);
+  height: min(720px, 100%);
+  border: 1px solid #2b323b;
+  border-radius: 10px;
+  overflow: hidden;
   background: #14171c;
   color: #eaeaea;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.55);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   font-variant-numeric: tabular-nums;
+}
+
+.route3d__panel:fullscreen {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 0;
 }
 
 .route3d__bar {
@@ -77,8 +100,11 @@
   background: linear-gradient(90deg, hsl(151, 85%, 45%), hsl(75, 85%, 48%), hsl(0, 85%, 51%));
 }
 
-.route3d__close {
+.route3d__btn {
   flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 32px;
   height: 32px;
   border: 1px solid #333b45;
@@ -90,9 +116,13 @@
   cursor: pointer;
 }
 
-.route3d__close:hover {
+.route3d__btn:hover {
   color: #eaeaea;
   border-color: #4a545f;
+}
+
+.route3d__btn + .route3d__btn {
+  margin-left: -6px;
 }
 
 .route3d__stage {
@@ -167,6 +197,17 @@
 }
 
 @media (max-width: 600px) {
+  .route3d {
+    padding: 0;
+  }
+
+  .route3d__panel {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 0;
+  }
+
   .route3d__legend-label,
   .route3d__hint {
     display: none;
