@@ -66,6 +66,10 @@
 }
 
 .route3d__id {
+  margin-right: auto;
+}
+
+.route3d__id {
   display: flex;
   flex-direction: column;
   gap: 2px;
@@ -83,21 +87,106 @@
   color: #8b939d;
 }
 
+/* 指標切換：疊在 3D 畫面左上角 */
+.route3d__tabs {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  display: flex;
+  gap: 2px;
+  padding: 3px;
+  border: 1px solid #2b323b;
+  border-radius: 8px;
+  background: rgba(20, 23, 28, 0.86);
+  backdrop-filter: blur(4px);
+}
+
+.route3d__tab {
+  padding: 5px 11px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: #8b939d;
+  font: inherit;
+  font-size: 12px;
+  line-height: 1.4;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.route3d__tab:hover {
+  color: #eaeaea;
+}
+
+.route3d__tab.is-on {
+  background: #262c34;
+  color: #d4af37;
+}
+
+/* 圖例：疊在 3D 畫面右下角 */
 .route3d__legend {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+  padding: 9px 12px;
+  border: 1px solid #2b323b;
+  border-radius: 8px;
+  background: rgba(20, 23, 28, 0.86);
+  backdrop-filter: blur(4px);
+  pointer-events: none;
+}
+
+.route3d__scale {
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-left: auto;
   font-size: 11px;
-  color: #8b939d;
+  color: #c3c2b7;
 }
 
 .route3d__ramp {
-  width: 120px;
+  width: 132px;
   height: 8px;
   border-radius: 4px;
-  /* 對應 marathon-3d.js 的 hrColor()：HSL 151° → 0° */
-  background: linear-gradient(90deg, hsl(151, 85%, 45%), hsl(75, 85%, 48%), hsl(0, 85%, 51%));
+}
+
+.route3d__swatches {
+  display: flex;
+  gap: 10px;
+}
+
+.route3d__swatch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  font-size: 10px;
+}
+
+.route3d__swatch i {
+  width: 26px;
+  height: 8px;
+  border-radius: 3px;
+}
+
+/* 區間靠文字標示身分，不是只靠顏色 */
+.route3d__swatch b {
+  color: #c3c2b7;
+  font-weight: 600;
+}
+
+.route3d__swatch em {
+  color: #8b939d;
+  font-style: normal;
+}
+
+.route3d__legend-note {
+  font-size: 10px;
+  color: #8b939d;
 }
 
 .route3d__btn {
@@ -153,8 +242,8 @@
 
 .route3d__readout {
   position: absolute;
-  left: 16px;
-  bottom: 16px;
+  left: 12px;
+  bottom: 12px;
   margin: 0;
   padding: 10px 14px;
   display: flex;
@@ -208,13 +297,29 @@
     border-radius: 0;
   }
 
-  .route3d__legend-label,
   .route3d__hint {
     display: none;
   }
 
   .route3d__ramp {
-    width: 64px;
+    width: 84px;
+  }
+
+  .route3d__tabs {
+    left: 8px;
+    right: 8px;
+    top: 8px;
+    overflow-x: auto;
+  }
+
+  .route3d__legend {
+    right: 8px;
+    bottom: auto;
+    top: 52px;
+  }
+
+  .route3d__swatches {
+    gap: 6px;
   }
 
   .route3d__readout {
