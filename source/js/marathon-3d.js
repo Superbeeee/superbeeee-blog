@@ -9,8 +9,17 @@
  *   但那要多帶三個 addon 檔。這裡改自己疊三角形做成緞帶（ribbon），寬度以
  *   公尺為單位、跟著鏡頭遠近縮放，順便讓 raycast 退回單純的 Mesh 判定。
  * - 鏡頭控制：自己寫一份最小的軌道控制（拖曳轉、滾輪／雙指縮放）。
+ *
+ * three 走動態 import：擺在最上面當靜態 import 的話，只要它載入失敗，整支模組
+ * 就不會執行、連點擊事件都不會綁 —— 畫面上完全沒反應，錯誤只躺在 console 裡。
+ * 改成點下去才載，載不動就把錯誤寫在覆蓋層上。
  */
-import * as THREE from '/js/vendor/three.module.min.js';
+let THREE = null;
+
+async function loadThree() {
+  if (!THREE) THREE = await import('/js/vendor/three.module.min.js');
+  return THREE;
+}
 
 const BG = '#14171c';
 const GRID_A = 0x2a3038;
@@ -452,9 +461,9 @@ async function open(meta) {
 
   let track;
   try {
-    track = await loadTrack(meta.track);
+    [track] = await Promise.all([loadTrack(meta.track), loadThree()]);
   } catch (err) {
-    status.textContent = '軌跡載入失敗：' + err.message;
+    status.textContent = '載入失敗：' + err.message;
     return;
   }
   if (!active || active.root !== root) return; // 載入期間被關掉了
