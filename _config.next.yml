@@ -101,6 +101,11 @@ index_with_subtitle: true
 # Google Search Console 驗證
 google_site_verification: a9ixjiPecVQPcrlsquODId4Imt5rxKUihGSByh3qFHk
 
+# Google Analytics 4（NexT 內建 gtag.js 載入，only_pageview 關閉才能送自訂事件）
+google_analytics:
+  tracking_id: G-BQMYMD0ZM7
+  only_pageview: false
+
 # 多語言：關掉 NeXT 內建的 select 切換器，改用自製極簡版
 language_switcher: false
 
